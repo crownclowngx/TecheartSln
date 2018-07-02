@@ -1,0 +1,7 @@
+F:\proj\TecheartSolution\Test\bin\Debug\Test.exe.config
+F:\proj\TecheartSolution\Test\bin\Debug\Test.exe
+F:\proj\TecheartSolution\Test\bin\Debug\Test.pdb
+F:\proj\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+F:\proj\TecheartSolution\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+F:\proj\TecheartSolution\Test\obj\Debug\Test.exe
+F:\proj\TecheartSolution\Test\obj\Debug\Test.pdb

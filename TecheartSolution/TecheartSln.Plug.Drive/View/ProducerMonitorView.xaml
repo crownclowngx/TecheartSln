@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="TecheartSln.Plug.Drive.View.ProducerMonitorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TecheartSln.Plug.Drive.View"
+             mc:Ignorable="d" >
+    <Grid MinWidth="466">
+        <StackPanel>
+            <ComboBox ItemsSource="{Binding SelKeepCountList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding MaxKeep,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+            <ListBox ItemsSource="{Binding Path=DataList}" MaxHeight="500">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="类型：" HorizontalContentAlignment="Center"></Label>
+                            <Label Content="{Binding Path=MessageDataType}" HorizontalContentAlignment="Center"></Label>
+
+                            <Label Content="消息体：" HorizontalContentAlignment="Center"></Label>
+                            <Label Content="{Binding Path=MessageData}" HorizontalContentAlignment="Center"></Label>
+
+
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

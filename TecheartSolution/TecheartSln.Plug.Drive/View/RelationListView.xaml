@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="TecheartSln.Plug.Drive.View.RelationListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TecheartSln.Plug.Drive.View"
+             mc:Ignorable="d" >
+    <Grid MinWidth="466">
+        <StackPanel>
+            <ListBox ItemsSource="{Binding Path=DynamicrelationList}" MaxHeight="500">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox IsChecked="{Binding Path=IsActive, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=CanUninstall}" Content="是否激活"></CheckBox>
+                            <CheckBox  IsChecked="{Binding Path=IsKeep, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=CanUninstall}" Content="是否保持"></CheckBox>
+                            <Label Content="{Binding Path=RelationDescribe}" HorizontalContentAlignment="Center"></Label>
+                            <Label Content="{Binding Path=RelationGuid}" HorizontalContentAlignment="Center"></Label>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
