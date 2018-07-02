@@ -57,6 +57,16 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Techea
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.Properties.Resources.resources
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.GenerateResource.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CoreCompileInputs.cache
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CopyComplete
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.exe
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\ICSharpCode.AvalonEdit.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\MaterialDesignColors.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\ShowMeTheXAML.AvalonEdit.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\ShowMeTheXAML.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\ICSharpCode.AvalonEdit.xml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\MaterialDesignColors.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\App.baml
