@@ -75,6 +75,10 @@
     </ApplicationDefinition>
     <Compile Include="InitResponse.cs" />
     <Compile Include="PluginTools.cs" />
+    <Compile Include="Utils\FileTemplateList.xaml.cs">
+      <DependentUpon>FileTemplateList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\FileTemplateListViewModel.cs" />
     <Compile Include="Utils\ToolsList.xaml.cs">
       <DependentUpon>ToolsList.xaml</DependentUpon>
     </Compile>
@@ -92,6 +96,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Utils\FileTemplateList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Utils\ToolsList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

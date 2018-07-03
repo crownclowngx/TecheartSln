@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TecheartSln.Main.Utils;
 
 namespace TecheartSln.Main
 {
@@ -32,6 +33,12 @@ namespace TecheartSln.Main
         {
             ToolsList toolsList = new ToolsList();
             toolsList.Show();
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            FileTemplateList file = new FileTemplateList();
+            file.Show();
         }
     }
 }

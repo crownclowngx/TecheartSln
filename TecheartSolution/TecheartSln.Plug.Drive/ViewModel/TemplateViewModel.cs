@@ -46,6 +46,11 @@ namespace TecheartSln.Plug.Drive.ViewModel
 
         public new static string GetDesc()
         {
+            return "一个测试用的文档模板";
+        }
+
+        public new static string GetName()
+        {
             return "TemplateViewModel";
         }
     }

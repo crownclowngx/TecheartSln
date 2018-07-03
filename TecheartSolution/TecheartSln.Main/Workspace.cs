@@ -52,6 +52,14 @@ namespace TecheartSln.Main
             }
         }
 
+        public IList<Type> FileTemplateTypes
+        {
+            get
+            {
+                return plugInit.TemplateBaseViewModels;
+            }
+        }
+
         public void InitCommandBinding(Window win)
         {
             var mainwin = win as MainWindow;
@@ -65,7 +73,10 @@ namespace TecheartSln.Main
                 mainwin.dockManager.LayoutItemContainerStyleSelector = selectStyle;
             }
         }
-
+        public void CreateFile(TemplateBaseViewModel item)
+        {
+            _files.Add(item);
+        }
         protected Workspace()
         {
             _files = new ObservableCollection<TemplateBaseViewModel>();

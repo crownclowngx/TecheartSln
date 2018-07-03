@@ -98,5 +98,10 @@ namespace TecheartSln.Core.ViewModel.Base
         {
             return "";
         }
+
+        public static string GetName()
+        {
+            return "";
+        }
     }
 }

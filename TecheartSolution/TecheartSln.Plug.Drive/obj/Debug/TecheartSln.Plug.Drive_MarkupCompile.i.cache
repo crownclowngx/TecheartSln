@@ -4,17 +4,17 @@
 library
 C#
 .cs
-F:\proj\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\
 TecheartSln.Plug.Drive
 none
 false
 DEBUG;TRACE
 
-4-144756475
+5-1932175696
 
-11-106605262
-16-1276903425
-FoundationDataTemplate.xaml;FoundationStyle.xaml;View\ProducerMonitorView.xaml;View\RelationListView.xaml;
+12-132363611
+161251226687
+FoundationDataTemplate.xaml;FoundationStyle.xaml;View\ProducerMonitorView.xaml;View\RelationListView.xaml;View\TemplateView.xaml;
 
-True
+False
 

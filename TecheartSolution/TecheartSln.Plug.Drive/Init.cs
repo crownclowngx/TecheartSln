@@ -42,6 +42,13 @@ namespace TecheartSln.Plug.Drive
                                     "ProducerMonitorViewTemplate") as DataTemplate;
 
             paneSel.RegisterDataTemplate(typeof(ProducerMonitorViewModel), template3);
+
+            var template4 = ResourceLocator.GetResource<DataTemplate>(
+                                    Assembly.GetAssembly(typeof(TemplateViewModel)).GetName().Name,
+                                    "FoundationDataTemplate.xaml",
+                                    "TemplateViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(TemplateViewModel), template4);
         }
     }
 }
