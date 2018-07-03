@@ -17,12 +17,19 @@ namespace TecheartSln.Main
         /// <summary>
         /// TemplateBaseViewModels
         /// </summary>
-        public IList<Type> TemplateBaseViewModels { get; set; }
+        public IList<TemplateViewModelInit> TemplateBaseViewModels { get; set; }
 
 
         /// <summary>
         /// ToolViewModels
         /// </summary>
         public IList<ToolViewModel> ToolViewModels { get; set; }
+    }
+
+    public class TemplateViewModelInit
+    {
+        public Type TemplateType { get; set; }
+
+        public String Identifier { get; set; }
     }
 }

@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows;
+using System.Windows.Input;
+using TecheartSln.Core.Command;
 using TecheartSln.Core.Message.MessageTypeProvider;
 using TecheartSln.Core.Message.RelationProvider;
+using TecheartSln.Core.Scene;
 using TecheartSln.Core.View.Pane;
 using TecheartSln.Core.ViewModel.Base;
 
@@ -52,7 +57,7 @@ namespace TecheartSln.Main
             }
         }
 
-        public IList<Type> FileTemplateTypes
+        public IList<TemplateViewModelInit> FileTemplateTypes
         {
             get
             {
@@ -101,6 +106,50 @@ namespace TecheartSln.Main
             
         }
 
+
+        #region OpenCommand
+        RelayCommand _openCommand = null;
+        public ICommand OpenCommand
+        {
+            get
+            {
+                if (_openCommand == null)
+                {
+                    _openCommand = new RelayCommand((p) => OnOpen(p), (p) => CanOpen(p));
+                }
+
+                return _openCommand;
+            }
+        }
+
+        private bool CanOpen(object parameter)
+        {
+            return true;
+        }
+
+        private void OnOpen(object parameter)
+        {
+            var dlg = new OpenFileDialog();
+            if (dlg.ShowDialog().GetValueOrDefault())
+            {
+                FileStream fsRead = new FileStream(dlg.FileName, FileMode.OpenOrCreate, FileAccess.Read);
+                int fsLen = (int)fsRead.Length;
+                byte[] heByte = new byte[fsLen];
+                int r = fsRead.Read(heByte, 0, heByte.Length);
+                string myStr = System.Text.Encoding.UTF8.GetString(heByte);
+                var viewmodel = GetViewModel(myStr);
+                if (viewmodel == null)
+                    return;
+                viewmodel.Path = dlg.FileName;
+                _files.Add(viewmodel);
+            }
+        }
+
+
+
+        #endregion
+
+
         void Close(String StrGuid)
         {
             if (_files.Any(k => k.StrGuid == StrGuid))
@@ -128,6 +177,25 @@ namespace TecheartSln.Main
             {
                 v.RegisterDataTemplates(paneSel);
             }
+        }
+
+        private TemplateBaseViewModel GetViewModel(String json)
+        {
+            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            var baseScene = javaScriptSerializer.Deserialize<BaseScene>(json);
+            if (baseScene == null)
+            {
+                return null;
+            }
+            foreach(var v in plugInit.TemplateBaseViewModels)
+            {
+                if(v.Identifier== baseScene.TypeIdentity)
+                {
+                    var tvm=(TemplateBaseViewModel)Activator.CreateInstance(v.TemplateType, new object[] { baseScene, json });
+                    return tvm;
+                }
+            }
+            return null;
         }
     }
 }

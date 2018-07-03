@@ -18,10 +18,12 @@ namespace TecheartSln.Main.Utils
             var templates = Workspace.This.FileTemplateTypes;
             foreach (var type in templates)
             {
-                MethodInfo methodDesc = type.GetMethod("GetDesc");
+                MethodInfo methodDesc = type.TemplateType.GetMethod("GetDesc");
                 
-                MethodInfo methodName = type.GetMethod("GetName");
-                _fileTemplates.Add(new FileTemplate() { FileDesc = methodDesc.Invoke(null, null).ToString(), FileName = methodName.Invoke(null, null).ToString(), TemplateType = type });
+                MethodInfo methodName = type.TemplateType.GetMethod("GetName");
+
+                MethodInfo methodGuid = type.TemplateType.GetMethod("TemplateGuid");
+                _fileTemplates.Add(new FileTemplate() { FileDesc = methodDesc.Invoke(null, null).ToString(), FileName = methodName.Invoke(null, null).ToString(), TemplateType = type.TemplateType , TemplateGuid= methodGuid.Invoke(null, null).ToString() });
             }
         }
 
@@ -49,6 +51,19 @@ namespace TecheartSln.Main.Utils
             }
         }
 
+        private String _fileName;
+
+        public String FileName
+        {
+            get { return _fileName; }
+
+            set
+            {
+                _fileName = value;
+                RaisePropertyChanged("FileName");
+            }
+        }
+
         private RelayCommand _createCommand = null;
         public ICommand CreateCommand
         {
@@ -56,11 +71,15 @@ namespace TecheartSln.Main.Utils
             {
                 if (_createCommand == null)
                 {
-                    if (p_SelectedItem == null)
-                    {
-                        return _createCommand;
-                    }
-                    _createCommand = new RelayCommand(p => { Workspace.This.CreateFile((TemplateBaseViewModel)Activator.CreateInstance(SelectedItem.TemplateType,new object[] { "新建文件"})); }, p => true);
+                    
+                    _createCommand = new RelayCommand(p => {
+                        if (p_SelectedItem == null)
+                        {
+                            return;
+                        }
+                        Workspace.This.CreateFile((TemplateBaseViewModel)Activator.CreateInstance(SelectedItem.TemplateType,new object[] { _fileName }));
+                    }, 
+                    p => true);
                 }
                 return _createCommand;
             }
@@ -86,5 +105,7 @@ namespace TecheartSln.Main.Utils
         /// 模板对应的 Type类型 ，方便实例化
         /// </summary>
         public Type TemplateType { get; set; }
+
+        public String TemplateGuid { get; set; }
     }
 }

@@ -12,13 +12,12 @@ namespace Test
         static void Main(string[] args)
         {
             Random random = new Random();
-            while (true)
             {
 
-                Console.Write (random.Next(0, 20) +" ");
+                Console.WriteLine(Guid.NewGuid().ToString());
  
             }
-            
+            Console.Read();
         }
     }
 }

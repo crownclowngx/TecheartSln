@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene\TemplateScene.cs" />
     <Compile Include="ViewModel\ProducerMonitorViewModel.cs" />
     <Compile Include="ViewModel\RelationListViewModel.cs" />
     <Compile Include="ViewModel\TemplateViewModel.cs" />

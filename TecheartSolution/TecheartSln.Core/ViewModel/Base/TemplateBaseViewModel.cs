@@ -24,6 +24,11 @@ namespace TecheartSln.Core.ViewModel.Base
             Title = title;
         }
 
+        public TemplateBaseViewModel(BaseScene scene,String json)
+        {
+
+        }
+
         abstract public ICommand CloseCommand
         {
             get;
@@ -100,6 +105,11 @@ namespace TecheartSln.Core.ViewModel.Base
         }
 
         public static string GetName()
+        {
+            return "";
+        }
+
+        public static String TemplateGuid()
         {
             return "";
         }

@@ -9,7 +9,7 @@ namespace TecheartSln.Core.Scene
     /// <summary>
     /// 场景，决定如何实例化
     /// </summary>
-    public abstract class BaseScene
+    public class BaseScene
     {
         public String Title { get; set; }
 

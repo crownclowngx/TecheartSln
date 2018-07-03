@@ -7,7 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="73,86,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-
+        <TextBlock Text="123456"> </TextBlock>
+        <Button Content="Button" Width="75" Margin="0,23,225,239" Command="{Binding Path=SaveCommand}"/>
     </Grid>
+    
+
 </UserControl>

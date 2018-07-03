@@ -112,3 +112,6 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartS
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.GenerateResource.Cache
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.exe
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\FileTemplateList.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\FileTemplateList.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CopyComplete

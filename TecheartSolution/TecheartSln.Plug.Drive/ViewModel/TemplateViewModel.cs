@@ -10,7 +10,9 @@ using TecheartSln.Core.Command;
 using TecheartSln.Core.Message.DeliverProvider;
 using TecheartSln.Core.Message.MessageTypeProvider;
 using TecheartSln.Core.Message.RelationProvider;
+using TecheartSln.Core.Scene;
 using TecheartSln.Core.ViewModel.Base;
+using TecheartSln.Plug.Drive.Scene;
 
 namespace TecheartSln.Plug.Drive.ViewModel
 {
@@ -18,6 +20,16 @@ namespace TecheartSln.Plug.Drive.ViewModel
     {
         public TemplateViewModel(string title) : base(title)
         {
+        }
+
+        public TemplateViewModel(BaseScene scene,String json):base(scene,json)
+        {
+            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            var sc = javaScriptSerializer.Deserialize<TemplateScene>(json);
+            if (sc != default(TemplateScene))
+            {
+                
+            }
         }
 
         RelayCommand _closeCommand = null;
@@ -34,9 +46,30 @@ namespace TecheartSln.Plug.Drive.ViewModel
             }
         }
 
-        public override ICommand SaveCommand => throw new NotImplementedException();
+        RelayCommand _saveCommand = null;
+        override public ICommand SaveCommand
+        {
+            get
+            {
+                if (_saveCommand == null)
+                {
+                    _saveCommand = new RelayCommand((p) => OnSave(), (p) => true);
+                }
 
+                return _saveCommand;
+            }
+        }
 
+        private void OnSave()
+        {
+
+            TemplateScene serial = new TemplateScene()
+            {
+                TextValue = "12354",
+                 TypeIdentity= TemplateGuid(),
+            };
+            base.SaveFile(serial);
+        }
         private void OnClose()
         {
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
@@ -52,6 +85,11 @@ namespace TecheartSln.Plug.Drive.ViewModel
         public new static string GetName()
         {
             return "TemplateViewModel";
+        }
+
+        public new static string TemplateGuid()
+        {
+            return "6b1561af-8a4b-4e54-8d78-857c057779ba";
         }
     }
 }

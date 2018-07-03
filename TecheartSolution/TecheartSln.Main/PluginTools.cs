@@ -38,7 +38,7 @@ namespace TecheartSln.Main
 
         public static InitResponse Init()
         {
-            InitResponse initResponse = new InitResponse() { Inits = new List<TecheartSln.Core.IInit>(), TemplateBaseViewModels = new List<Type>(), ToolViewModels=new List<ToolViewModel>() };
+            InitResponse initResponse = new InitResponse() { Inits = new List<TecheartSln.Core.IInit>(), TemplateBaseViewModels = new List<TemplateViewModelInit>(), ToolViewModels=new List<ToolViewModel>() };
             var paths = GetPlugsPath();
             foreach (var v in paths)
             {
@@ -56,7 +56,9 @@ namespace TecheartSln.Main
                     }
                     if (dlltype.BaseType == typeof(TemplateBaseViewModel))
                     {
-                        initResponse.TemplateBaseViewModels.Add(dlltype);
+                        MethodInfo methodDesc = dlltype.GetMethod("TemplateGuid");
+                        TemplateViewModelInit templateViewModelInit = new TemplateViewModelInit() { TemplateType= dlltype, Identifier = methodDesc.Invoke(null, null).ToString() };
+                        initResponse.TemplateBaseViewModels.Add(templateViewModelInit);
                     }
                 }
             }
