@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="TecheartSln.Plug.Editor.View.QuestionEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:TecheartSln.Plug.Editor.View"
+             mc:Ignorable="d" 
+             >
+    <!---->
+    <Grid>
+        <StackPanel>
+            <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=QuesionList}" MaxHeight="400" CanUserSortColumns="True" CanUserAddRows="True" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=Id}" Header="题目编号" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=CountSelection}" Header="选项个数" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=Answoer}" Header="答案" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=Score}" Header="题目分树" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+                
+                
+            <Button Content="保存" Command="{Binding SaveCommand}"/>
+
+        </StackPanel>
+        
+        
+    </Grid>
+</UserControl>

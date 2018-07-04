@@ -32,13 +32,14 @@ namespace TecheartSln.Main
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             ToolsList toolsList = new ToolsList();
-            toolsList.Show();
+
+            toolsList.ShowDialog();
         }
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             FileTemplateList file = new FileTemplateList();
-            file.Show();
+            file.ShowDialog();
         }
     }
 }

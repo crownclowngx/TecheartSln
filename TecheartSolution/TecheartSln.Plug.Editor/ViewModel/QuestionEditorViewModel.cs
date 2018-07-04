@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,9 @@ using TecheartSln.Core.Message.MessageTypeProvider;
 using TecheartSln.Core.Message.RelationProvider;
 using TecheartSln.Core.Scene;
 using TecheartSln.Core.ViewModel.Base;
+using TecheartSln.Plug.Editor.Domain;
+using TecheartSln.Plug.Editor.Scene;
+using TecheartSln.Plug.Editor.Domain.Utils;
 
 namespace TecheartSln.Plug.Editor.ViewModel
 {
@@ -23,13 +27,26 @@ namespace TecheartSln.Plug.Editor.ViewModel
         public QuestionEditorViewModel(BaseScene scene, String json):base(scene,json)
         {
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-            //var sc = javaScriptSerializer.Deserialize<TemplateScene>(json);
-            //if (sc != default(TemplateScene))
-            //{
-            //
-            //}
+            var sc = javaScriptSerializer.Deserialize<QuestionEditorScence>(json);
+            if (sc != default(QuestionEditorScence))
+            {
+                foreach(var v in sc.QuestionList)
+                {
+                    _quesionList.Add(v.Convert());
+                }
+            }
         }
 
+        private ObservableCollection<VMQuesion> _quesionList = new ObservableCollection<VMQuesion>();
+        public ObservableCollection<VMQuesion> QuesionList
+        {
+            get { return _quesionList; }
+            set
+            {
+                _quesionList = value;
+                RaisePropertyChanged("QuesionList");
+            }
+        }
 
         RelayCommand _closeCommand = null;
         override public ICommand CloseCommand
@@ -45,7 +62,31 @@ namespace TecheartSln.Plug.Editor.ViewModel
             }
         }
 
-        public override ICommand SaveCommand => throw new NotImplementedException();
+        RelayCommand _saveCommand = null;
+        override public ICommand SaveCommand
+        {
+            get
+            {
+                if (_saveCommand == null)
+                {
+                    _saveCommand = new RelayCommand((p) => 
+                    {
+                        QuestionEditorScence questionEditorScence = new QuestionEditorScence()
+                        {
+                            QuestionList = new List<Question>(),
+                            TypeIdentity = TemplateGuid(),
+                        };
+                        foreach (var v in _quesionList)
+                        {
+                            questionEditorScence.QuestionList.Add(v.Convert());
+                        }
+                        base.SaveFile(questionEditorScence);
+                    }, (p) => true);
+                }
+
+                return _saveCommand;
+            }
+        }
 
         private void OnClose()
         {
@@ -70,7 +111,30 @@ namespace TecheartSln.Plug.Editor.ViewModel
         /// <returns></returns>
         public new static string TemplateGuid()
         {
-            return "6b1561af-8a4b-4e54-8d78-857c057779ba";
+            return "67c77401-1e45-4eb9-973a-77ae0f32a664";
         }
+    }
+
+    public class VMQuesion
+    {
+        /// <summary>
+        /// 题目编号
+        /// </summary>
+        public String Id { get; set; }
+
+        /// <summary>
+        /// 选项个数
+        /// </summary>
+        public int CountSelection { get; set; }
+
+        /// <summary>
+        /// 选项，多个选项以,分割
+        /// </summary>
+        public String Answoer { get; set; }
+
+        /// <summary>
+        /// 分数
+        /// </summary>
+        public int Score { get; set; }
     }
 }

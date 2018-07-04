@@ -29,7 +29,12 @@ namespace TecheartSln.Plug.Editor
 
         public void RegisterDataTemplates(PanesTemplateSelectorDynamic paneSel)
         {
-           
+            var template2 = ResourceLocator.GetResource<DataTemplate>(
+                                    Assembly.GetAssembly(typeof(QuestionEditorViewModel)).GetName().Name,
+                                    "FoundationDataTemplate.xaml",
+                                    "TecheartSlnPlugEditorQuestionEditorViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(QuestionEditorViewModel), template2);
         }
     }
 }

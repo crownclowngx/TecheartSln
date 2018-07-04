@@ -6,5 +6,7 @@
              xmlns:local="clr-namespace:TecheartSln.Plug.Editor"
              xmlns:localview="clr-namespace:TecheartSln.Plug.Editor.View"
              mc:Ignorable="d" >
-
+    <DataTemplate x:Key="TecheartSlnPlugEditorQuestionEditorViewTemplate">
+        <localview:QuestionEditorView />
+    </DataTemplate>
 </ResourceDictionary>

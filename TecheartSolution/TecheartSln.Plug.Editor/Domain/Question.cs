@@ -24,6 +24,11 @@ namespace TecheartSln.Plug.Editor.Domain
         public IList<String> SelectionDescription { get; set; }
 
         /// <summary>
+        /// 选项总数
+        /// </summary>
+        public int CountSelection { get; set; }
+
+        /// <summary>
         /// 题目答案
         /// </summary>
         public IList<String> Answer { get; set; }
