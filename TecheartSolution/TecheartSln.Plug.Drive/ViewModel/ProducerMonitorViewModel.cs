@@ -15,6 +15,9 @@ namespace TecheartSln.Plug.Drive.ViewModel
 {
     public class ProducerMonitorViewModel : ToolViewModel
     {
+        /// <summary>
+        /// 新定义的模板中 如果创建工具model需要 全部的项目名称+自定义工具名称+Tool
+        /// </summary>
         public const string ToolContentId = "ProducerMonitorTool";
         private readonly String GuidWSDEDataComeEvent = Guid.NewGuid().ToString();
         private readonly object objLockDataCome = new object();

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27428.2015
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Core", "TecheartSln.Core\TecheartSln.Core.csproj", "{19CCF48C-F9CB-474F-86E4-530A579AB4EA}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Plug.Drive", "TecheartSln.Plug.Drive\TecheartSln.Plug.Drive.csproj", "{C13F4141-4B6C-423F-80AA-EA0B778D717D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Main", "TecheartSln.Main\TecheartSln.Main.csproj", "{B8D05477-E2EC-4FF4-9B03-50145EFDC328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Plug.Editor", "TecheartSln.Plug.Editor\TecheartSln.Plug.Editor.csproj", "{7D3B9E18-C362-4E48-B399-3AF4B683B9FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B8D05477-E2EC-4FF4-9B03-50145EFDC328}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D05477-E2EC-4FF4-9B03-50145EFDC328}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D05477-E2EC-4FF4-9B03-50145EFDC328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D3B9E18-C362-4E48-B399-3AF4B683B9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3B9E18-C362-4E48-B399-3AF4B683B9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3B9E18-C362-4E48-B399-3AF4B683B9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3B9E18-C362-4E48-B399-3AF4B683B9FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

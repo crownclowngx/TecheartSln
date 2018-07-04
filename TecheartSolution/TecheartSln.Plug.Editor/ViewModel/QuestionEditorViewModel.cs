@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using System.Windows;
 using System.Windows.Input;
 using TecheartSln.Core.Command;
 using TecheartSln.Core.Message.DeliverProvider;
@@ -12,25 +11,25 @@ using TecheartSln.Core.Message.MessageTypeProvider;
 using TecheartSln.Core.Message.RelationProvider;
 using TecheartSln.Core.Scene;
 using TecheartSln.Core.ViewModel.Base;
-using TecheartSln.Plug.Drive.Scene;
 
-namespace TecheartSln.Plug.Drive.ViewModel
+namespace TecheartSln.Plug.Editor.ViewModel
 {
-    public class TemplateViewModel : TemplateBaseViewModel
+    public class QuestionEditorViewModel : TemplateBaseViewModel
     {
-        public TemplateViewModel(string title) : base(title)
+        public QuestionEditorViewModel(string title) : base(title)
         {
         }
 
-        public TemplateViewModel(BaseScene scene,String json):base(scene,json)
+        public QuestionEditorViewModel(BaseScene scene, String json):base(scene,json)
         {
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-            var sc = javaScriptSerializer.Deserialize<TemplateScene>(json);
-            if (sc != default(TemplateScene))
-            {
-                
-            }
+            //var sc = javaScriptSerializer.Deserialize<TemplateScene>(json);
+            //if (sc != default(TemplateScene))
+            //{
+            //
+            //}
         }
+
 
         RelayCommand _closeCommand = null;
         override public ICommand CloseCommand
@@ -46,30 +45,8 @@ namespace TecheartSln.Plug.Drive.ViewModel
             }
         }
 
-        RelayCommand _saveCommand = null;
-        override public ICommand SaveCommand
-        {
-            get
-            {
-                if (_saveCommand == null)
-                {
-                    _saveCommand = new RelayCommand((p) => OnSave(), (p) => true);
-                }
+        public override ICommand SaveCommand => throw new NotImplementedException();
 
-                return _saveCommand;
-            }
-        }
-
-        private void OnSave()
-        {
-
-            TemplateScene serial = new TemplateScene()
-            {
-                TextValue = "12354",
-                 TypeIdentity= TemplateGuid(),
-            };
-            base.SaveFile(serial);
-        }
         private void OnClose()
         {
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
@@ -79,12 +56,12 @@ namespace TecheartSln.Plug.Drive.ViewModel
 
         public new static string GetDesc()
         {
-            return "一个测试用的文档模板";
+            return "一个简单的题目编辑器，可以设置题号，题目选项个数，题目正确答案(支持多选)，并最终支持保存成一个文档，以被其他程序使用。";
         }
 
         public new static string GetName()
         {
-            return "TemplateViewModel";
+            return "简易问题编辑器";
         }
 
         /// <summary>
