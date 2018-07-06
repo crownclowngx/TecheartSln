@@ -12,3 +12,9 @@ D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolve
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb
+D:\Code\NewGit\TecheartSln\TecheartSolution\Test\bin\Debug\Test.exe.config
+D:\Code\NewGit\TecheartSln\TecheartSolution\Test\bin\Debug\Test.exe
+D:\Code\NewGit\TecheartSln\TecheartSolution\Test\bin\Debug\Test.pdb
+D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
+D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb

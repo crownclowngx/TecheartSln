@@ -4,14 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TecheartSln.Plug.Classroom.Domain
+namespace TecheartSln.Plug.Classroom.Domain.Boundary
 {
     public class QuestionSet
     {
-    }
-
-    public class Question
-    {
-
+        public IList<ExaminationQuestion> QuestionList { get; set; }
     }
 }

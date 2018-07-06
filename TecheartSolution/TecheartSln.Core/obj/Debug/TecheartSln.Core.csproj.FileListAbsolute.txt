@@ -38,7 +38,6 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\bin\Debug\ro\Avalon
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\bin\Debug\ru\AvalonDock.resources.dll
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\bin\Debug\sv\AvalonDock.resources.dll
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\bin\Debug\zh-Hans\AvalonDock.resources.dll
-D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csprojResolveAssemblyReference.cache
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core_MarkupCompile.cache
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core_MarkupCompile.lref
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\FoundationDataTemplate.baml

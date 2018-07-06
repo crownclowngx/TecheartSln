@@ -29,7 +29,12 @@ namespace TecheartSln.Plug.Classroom
 
         public void RegisterDataTemplates(PanesTemplateSelectorDynamic paneSel)
         {
-           
+            var template2 = ResourceLocator.GetResource<DataTemplate>(
+                                    Assembly.GetAssembly(typeof(SimpleExaminationViewModel)).GetName().Name,
+                                    "FoundationDataTemplate.xaml",
+                                    "TecheartSlnPlugClassroomSimpleExaminationViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(SimpleExaminationViewModel), template2);
         }
     }
 }

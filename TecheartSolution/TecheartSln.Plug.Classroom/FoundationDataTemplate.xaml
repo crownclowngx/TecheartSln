@@ -6,5 +6,7 @@
              xmlns:local="clr-namespace:TecheartSln.Plug.Classroom"
              xmlns:localview="clr-namespace:TecheartSln.Plug.Classroom.View"
              mc:Ignorable="d" >
-
+    <DataTemplate x:Key="TecheartSlnPlugClassroomSimpleExaminationViewTemplate">
+        <localview:SimpleExaminationView />
+    </DataTemplate>
 </ResourceDictionary>

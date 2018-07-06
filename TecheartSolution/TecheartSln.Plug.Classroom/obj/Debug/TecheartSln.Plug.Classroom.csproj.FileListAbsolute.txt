@@ -1,0 +1,13 @@
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csprojResolveAssemblyReference.cache
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom_MarkupCompile.cache
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom_MarkupCompile.lref
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Classroom.dll
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Classroom.pdb
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\View\SimpleExaminationView.g.cs
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\FoundationDataTemplate.baml
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\FoundationStyle.baml
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\View\SimpleExaminationView.baml
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.g.resources
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.dll
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.pdb
