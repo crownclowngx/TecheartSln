@@ -15,7 +15,7 @@
         <localview:ProducerMonitorView />
     </DataTemplate>
 
-    <DataTemplate x:Key="TemplateViewTemplate">
-        <localview:TemplateView />
+    <DataTemplate x:Key="TecheartHostViewTemplate">
+        <localview:TecheartHostView />
     </DataTemplate>
 </ResourceDictionary>

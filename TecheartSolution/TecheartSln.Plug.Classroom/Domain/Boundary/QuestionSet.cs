@@ -8,6 +8,6 @@ namespace TecheartSln.Plug.Classroom.Domain.Boundary
 {
     public class QuestionSet
     {
-        public IList<ExaminationQuestion> QuestionList { get; set; }
+        public IList<Question> QuestionList { get; set; }
     }
 }

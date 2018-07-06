@@ -6,7 +6,35 @@
              xmlns:local="clr-namespace:TecheartSln.Plug.Classroom.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
     <StackPanel>
+        <TextBlock Text="{Binding Path=ProcessList}"/>
         <Button Content="打开文件" Command="{Binding Path=OpenQuestionFileCommand}"/>
+        <CheckBox Content="开始考试" IsChecked="{Binding Path=Start}"/>
+        <ItemsControl ItemsSource="{Binding Path=QuestionList}" MaxHeight="400">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20*" />
+                            <ColumnDefinition Width="80*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Path=QuestionNumber}"></TextBlock>
+                        <StackPanel Margin="8 0 0 0" Grid.Column="1">
+                            <TextBlock FontWeight="Bold" Text="{Binding Path=AnswerAndScore}" />
+                            <TextBlock Text="{Binding Path=Statistics}" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </StackPanel>
 </UserControl>

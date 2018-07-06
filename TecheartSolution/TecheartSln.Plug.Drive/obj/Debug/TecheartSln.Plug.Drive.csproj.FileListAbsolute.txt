@@ -65,7 +65,6 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\bin\Debug\
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csprojResolveAssemblyReference.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\ProducerMonitorView.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\RelationListView.g.cs
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TemplateView.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive_MarkupCompile.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive_MarkupCompile.lref
@@ -73,7 +72,6 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\FoundationStyle.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\ProducerMonitorView.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\RelationListView.baml
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TemplateView.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.g.resources
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csproj.CoreCompileInputs.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.dll
@@ -82,3 +80,6 @@ D:\Project\github\TecheartSln\TecheartSolution\bin\Debug\plug\TecheartSln.Plug.D
 D:\Project\github\TecheartSln\TecheartSolution\bin\Debug\plug\TecheartSln.Plug.Drive.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Drive.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Drive.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TecheartHostView.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TecheartHostView.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csproj.CopyComplete

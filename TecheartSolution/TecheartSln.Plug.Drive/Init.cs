@@ -20,7 +20,7 @@ namespace TecheartSln.Plug.Drive
     {
         public IList<ToolViewModel> GetToolViewModel()
         {
-            return new List<ToolViewModel>() { new RelationListViewModel(),new ProducerMonitorViewModel()};
+            return new List<ToolViewModel>() { new RelationListViewModel(),new ProducerMonitorViewModel(),new TecheartHostViewModel()};
         }
 
         public void RedisterStyles(PanesStyleSelectorDynamic selectPanesStyle)
@@ -44,11 +44,12 @@ namespace TecheartSln.Plug.Drive
             paneSel.RegisterDataTemplate(typeof(ProducerMonitorViewModel), template3);
 
             var template4 = ResourceLocator.GetResource<DataTemplate>(
-                                    Assembly.GetAssembly(typeof(TemplateViewModel)).GetName().Name,
+                                    Assembly.GetAssembly(typeof(TecheartHostViewModel)).GetName().Name,
                                     "FoundationDataTemplate.xaml",
-                                    "TemplateViewTemplate") as DataTemplate;
+                                    "TecheartHostViewTemplate") as DataTemplate;
 
-            paneSel.RegisterDataTemplate(typeof(TemplateViewModel), template4);
+            paneSel.RegisterDataTemplate(typeof(TecheartHostViewModel), template4);
+
         }
     }
 }

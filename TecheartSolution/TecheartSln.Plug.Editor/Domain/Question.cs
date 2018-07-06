@@ -11,7 +11,7 @@ namespace TecheartSln.Plug.Editor.Domain
         /// <summary>
         /// 题目编号
         /// </summary>
-        public String QuestionNumber { get; set; }
+        public int QuestionNumber { get; set; }
 
         /// <summary>
         /// 题干

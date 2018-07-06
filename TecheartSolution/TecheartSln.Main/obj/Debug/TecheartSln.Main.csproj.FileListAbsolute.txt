@@ -115,3 +115,5 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartS
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\FileTemplateList.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\FileTemplateList.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CopyComplete
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartVote.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartVote.pdb

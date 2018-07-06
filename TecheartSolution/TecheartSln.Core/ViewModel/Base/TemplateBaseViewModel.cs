@@ -92,6 +92,10 @@ namespace TecheartSln.Core.ViewModel.Base
 
         void MakeChangeTitle()
         {
+            if (String.IsNullOrEmpty(this.Title))
+            {
+                this.Title = "";
+            }
             if (this.Title.LastOrDefault() == '*')
             {
                 return;

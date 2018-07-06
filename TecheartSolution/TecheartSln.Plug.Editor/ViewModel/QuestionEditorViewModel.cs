@@ -120,7 +120,7 @@ namespace TecheartSln.Plug.Editor.ViewModel
         /// <summary>
         /// 题目编号
         /// </summary>
-        public String Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// 选项个数

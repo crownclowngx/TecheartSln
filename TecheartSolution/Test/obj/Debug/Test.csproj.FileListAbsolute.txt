@@ -8,7 +8,6 @@ F:\proj\TecheartSolution\Test\obj\Debug\Test.pdb
 D:\Project\github\TecheartSln\TecheartSolution\Test\bin\Debug\Test.exe.config
 D:\Project\github\TecheartSln\TecheartSolution\Test\bin\Debug\Test.exe
 D:\Project\github\TecheartSln\TecheartSolution\Test\bin\Debug\Test.pdb
-D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb

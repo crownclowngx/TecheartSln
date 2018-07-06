@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace TecheartSln.Plug.Drive.View
 {
     /// <summary>
-    /// TemplateView.xaml 的交互逻辑
+    /// TecheartHostView.xaml 的交互逻辑
     /// </summary>
-    public partial class TemplateView : UserControl
+    public partial class TecheartHostView : UserControl
     {
-        public TemplateView()
+        public TecheartHostView()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("DO It");
         }
     }
 }
