@@ -36,19 +36,35 @@ namespace TecheartSln.Plug.Classroom.Domain
         /// <param name="select">选择的选项</param>
         public void Add(String voterid,int questionNumber,String select)
         {
+            //找到第题目并且对题目进行统计
             var firstquestion = ExaminationQuestions.FirstOrDefault(k => k.QuestionNumber.Equals(questionNumber));
             if (firstquestion == null)
             {
                 return;
             }
             firstquestion.AddStatistic(voterid, questionNumber, select);
+
+            //找到人，根据题目答案判定对错在对人进行统计
             var firstVoter=Voters.FirstOrDefault(k => k.VoterId.Equals(voterid));
             if (firstVoter == null)
             {
                 firstVoter = new Voter(voterid);
                 Voters.Add(firstVoter);
             }
-            firstVoter.AddStatistic(voterid, questionNumber, select);
+            //var selects = select.ToList().Select(k => k.ToString()).ToList();
+
+            firstVoter.AddStatistic(voterid, questionNumber, select, GetAnswerScore(select, firstquestion));
+        }
+
+        /// <summary>
+        /// 给出分数，如果未达对得0分
+        /// </summary>
+        /// <param name="select"></param>
+        /// <param name="question"></param>
+        /// <returns></returns>
+        int GetAnswerScore(String select, ExaminationQuestion question)
+        {
+            return 0;
         }
     }
 }

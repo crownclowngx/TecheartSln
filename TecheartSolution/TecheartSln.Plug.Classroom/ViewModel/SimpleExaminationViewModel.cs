@@ -78,6 +78,8 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             set
             {
                 _start = value;
+                if (value) ProcessList += "->开始考试";
+                else ProcessList += "->结束考试";
                 RaisePropertyChanged("Start");
             }
         }

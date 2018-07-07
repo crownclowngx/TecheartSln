@@ -13,6 +13,11 @@ namespace TecheartSln.Core.Utils
         /// 私有变量
         /// </summary>
         private static List<FileInfo> lst = new List<FileInfo>();
+
+        public static void clear()
+        {
+            lst = new List<FileInfo>();
+        }
         /// <summary>
         /// 获得目录下所有文件或指定文件类型文件(包含所有子文件夹)
         /// </summary>
