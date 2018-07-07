@@ -36,6 +36,11 @@ namespace TecheartSln.Plug.Classroom.Domain
         /// <param name="select">选择的选项</param>
         public void Add(String voterid,int questionNumber,String select)
         {
+            if (String.IsNullOrEmpty(select))
+            {
+                return;
+            }
+
             //找到第题目并且对题目进行统计
             var firstquestion = ExaminationQuestions.FirstOrDefault(k => k.QuestionNumber.Equals(questionNumber));
             if (firstquestion == null)
@@ -64,7 +69,17 @@ namespace TecheartSln.Plug.Classroom.Domain
         /// <returns></returns>
         int GetAnswerScore(String select, ExaminationQuestion question)
         {
-            return 0;
+            int score = question.Score;
+            var selects = select.ToList().Select(k => k.ToString()).ToList();
+            selects.ForEach(k => 
+            {
+                if (!question.Answer.Any(m => k == m))
+                {
+                    score = 0;
+                    return;
+                }
+            });
+            return score;
         }
     }
 }

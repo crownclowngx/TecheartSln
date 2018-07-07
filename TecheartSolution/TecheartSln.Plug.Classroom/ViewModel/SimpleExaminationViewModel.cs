@@ -241,7 +241,6 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
         
-        
         public void Set(ExaminationQuestion examinationQuestion)
         {
             

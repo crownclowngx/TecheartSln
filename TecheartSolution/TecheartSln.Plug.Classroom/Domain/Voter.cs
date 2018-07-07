@@ -27,7 +27,7 @@ namespace TecheartSln.Plug.Classroom.Domain
         /// <summary>
         /// 考生总分
         /// </summary>
-        public int Score { get; set; }
+        public int Score { get { int score = 0; foreach (var v in StatisticsAnswer.Values) { score += v; } return score; } }
 
         /// <summary>
         /// 答题对错的统计(题目，分数)，如果未答对分数是0 否则分数有值
