@@ -17,38 +17,64 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="40*"/>
             <RowDefinition Height="35*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="15*"/>
         </Grid.RowDefinitions>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="0" >
-            <StackPanel >
+            <StackPanel>
                 <TextBlock Text="{Binding Path=ProcessList}"/>
                 <Button Content="打开文件" Command="{Binding Path=OpenQuestionFileCommand}"/>
                 <CheckBox Content="开始考试" IsChecked="{Binding Path=Start}"/>
+                <Button Content="保存" Command="{Binding Path=SaveCommand}"/>
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1" >
-            <ItemsControl ItemsSource="{Binding Path=QuestionList}">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="20*" />
-                                <ColumnDefinition Width="80*"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Path=QuestionNumber}"></TextBlock>
-                            <StackPanel Margin="8 0 0 0" Grid.Column="1">
-                                <TextBlock FontWeight="Bold" Text="{Binding Path=AnswerAndScore}" />
-                                <TextBlock Text="{Binding Path=Statistics}" />
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+            <StackPanel>
+                <TextBlock Text="题目监控"/>
+                <ItemsControl ItemsSource="{Binding Path=QuestionList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="80*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=QuestionNumber}"></TextBlock>
+                                <StackPanel Margin="8 0 0 0" Grid.Column="1">
+                                    <TextBlock FontWeight="Bold" Text="{Binding Path=AnswerAndScore}" />
+                                    <TextBlock Text="{Binding Path=Statistics}" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
         </ScrollViewer>
-        
+
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="2" >
+            <StackPanel>
+                <TextBlock Text="学生监控"/>
+                <ItemsControl ItemsSource="{Binding Path=StudentList}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*" />
+                                    <ColumnDefinition Width="80*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Path=StudentNumber}"></TextBlock>
+                                <StackPanel Margin="8 0 0 0" Grid.Column="1">
+                                    <TextBlock FontWeight="Bold" Text="{Binding Path=Score}" />
+                                    <TextBlock Text="{Binding Path=Count}" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
     
 </UserControl>

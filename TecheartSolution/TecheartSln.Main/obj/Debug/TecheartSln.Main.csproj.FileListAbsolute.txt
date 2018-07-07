@@ -94,7 +94,6 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\FileTemplateList.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartSln.Core.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartSln.Core.pdb
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CopyComplete
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\AvalonDock.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\ICSharpCode.AvalonEdit.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\MaterialDesignColors.dll

@@ -66,6 +66,5 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\Founda
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\FoundationStyle.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.g.resources
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csproj.CoreCompileInputs.cache
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csproj.CopyComplete
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.pdb

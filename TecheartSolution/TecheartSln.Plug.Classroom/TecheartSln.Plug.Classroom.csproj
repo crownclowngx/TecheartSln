@@ -77,6 +77,8 @@
     <Compile Include="Domain\Voter.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scene\SimpleExaminationScene.cs" />
+    <Compile Include="Scene\VoterScene.cs" />
     <Compile Include="ViewModel\SimpleExaminationViewModel.cs" />
     <Compile Include="View\SimpleExaminationView.xaml.cs">
       <DependentUpon>SimpleExaminationView.xaml</DependentUpon>
@@ -89,9 +91,7 @@
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scene\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="FoundationDataTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -74,6 +74,8 @@ namespace TecheartSln.Plug.Classroom.Domain
                 {
                     StatisticsAddOne(v);
                 }
+
+                Voterids[voterid] = selects;
             }
         }
 

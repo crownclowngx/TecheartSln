@@ -19,6 +19,7 @@ using System.Windows;
 using TecheartSln.Plug.Classroom.Domain.Boundary;
 using System.Collections.ObjectModel;
 using TecheartSln.Plug.Classroom.Domain;
+using TecheartSln.Plug.Classroom.Scene;
 
 namespace TecheartSln.Plug.Classroom.ViewModel
 {
@@ -36,7 +37,21 @@ namespace TecheartSln.Plug.Classroom.ViewModel
         {
             init();
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-            
+            var response=javaScriptSerializer.Deserialize<SimpleExaminationScene>(json);
+            examination = response.Convert();
+            foreach (var v in examination.ExaminationQuestions)
+            {
+                QuestionVM vm = new QuestionVM();
+                vm.Set(v);
+                QuestionList.Add(vm);
+            }
+
+            foreach(var v in examination.Voters)
+            {
+                StudentVM studentNM = new StudentVM();
+                studentNM.Set(v);
+                StudentList.Add(studentNM);
+            }
         }
 
 
@@ -98,7 +113,19 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
         #endregion
-
+        #region 考试学生VM
+        private ObservableCollection<StudentVM> _studentList = new ObservableCollection<StudentVM>();
+        public ObservableCollection<StudentVM> StudentList
+        {
+            get { return _studentList; }
+            set
+            {
+                _studentList = value;
+                RaisePropertyChanged("StudentList");
+                base.ViewChange();
+            }
+        }
+        #endregion
         #region 窗口关闭命令
         RelayCommand _closeCommand = null;
         override public ICommand CloseCommand
@@ -123,7 +150,39 @@ namespace TecheartSln.Plug.Classroom.ViewModel
         #endregion
 
         #region 窗口保存命令
-        public override ICommand SaveCommand => throw new NotImplementedException();
+        RelayCommand _saveCommand = null;
+        override public ICommand SaveCommand
+        {
+            get
+            {
+                if (_saveCommand == null)
+                {
+                    _saveCommand = new RelayCommand((p) =>
+                    {
+                        SimpleExaminationScene simpleExaminationScene = new SimpleExaminationScene()
+                        {
+                            TypeIdentity = TemplateGuid(),
+                            VoterScene = new List<VoterScene>(),
+                            ExaminationQuestion = examination.ExaminationQuestions,
+                        };
+                        if(examination==null || examination.Voters == null)
+                        {
+                            return;
+                        }
+                        foreach(var v in examination.Voters)
+                        {
+                            foreach(var k in v.Statistics)
+                            {
+                                simpleExaminationScene.VoterScene.Add(new VoterScene() { VoterId=v.VoterId, Select=k.Value, QuestionNumber=k.Key });
+                            }
+                        }
+                        base.SaveFile(simpleExaminationScene);
+                    }, (p) => true);
+                }
+
+                return _saveCommand;
+            }
+        }
         #endregion
 
         #region 打开题目模板
@@ -134,9 +193,9 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             {
                 if (_openQuestionFileCommand == null)
                 {
-                    _openQuestionFileCommand = new RelayCommand((p) => 
+                    _openQuestionFileCommand = new RelayCommand((p) =>
                     {
-                        var respnose=OpenFileUtils.OpenFileByDialog();
+                        var respnose = OpenFileUtils.OpenFileByDialog();
                         JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
                         dynamic dy = javaScriptSerializer.Deserialize<dynamic>(respnose);
                         var dydic = (IDictionary<string, object>)dy;
@@ -144,9 +203,9 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                         {
                             MessageBox.Show("文件不能被打开，这里只能打开题目文件，不能是其他类型的文件");
                         }
-                        var set=javaScriptSerializer.Deserialize<QuestionSet>(respnose);
+                        var set = javaScriptSerializer.Deserialize<QuestionSet>(respnose);
                         examination.ExaminationQuestions = set.QuestionList.Select(k => k.convert()).ToList();
-                        foreach(var v in examination.ExaminationQuestions)
+                        foreach (var v in examination.ExaminationQuestions)
                         {
                             QuestionVM vm = new QuestionVM();
                             vm.Set(v);
@@ -158,7 +217,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
 
                 return _openQuestionFileCommand;
             }
-                    
+
         }
         #endregion
 
@@ -183,17 +242,79 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                         var response = javaScriptSerializer.Deserialize<WSDESubVoterSelectRequest>(messageData.MessageData);
                         var number = System.Convert.ToInt32(response.SubVoterSelectNumber);
                         examination.Add(response.SubVoterNumber, number, response.SubVoterResult);
-                        if(QuestionList.Any(k => k.QuestionNumber == response.SubVoterSelectNumber))
+                        if (QuestionList.Any(k => k.QuestionNumber == response.SubVoterSelectNumber))
                         {
                             QuestionList.First(k => k.QuestionNumber == response.SubVoterSelectNumber).Set(examination.ExaminationQuestions.First(k => k.QuestionNumber == number));
                         }
+                        if (!StudentList.Any(k => k.StudentNumber == response.SubVoterNumber))
+                        {
+                            StudentVM studentNM = new StudentVM();
+                            studentNM.Set(examination.Voters.First(k => k.VoterId == response.SubVoterNumber));
+                            StudentList.Add(studentNM);
+                        }
+
+                        StudentList.First(k => k.StudentNumber == response.SubVoterNumber).Set(examination.Voters.First(k => k.VoterId == response.SubVoterNumber));
+
                         base.ViewChange();
                     });
                 },
             });
         }
     }
+    public class StudentVM: ViewModelBase
+    {
+        /// <summary>
+        /// 题目编号
+        /// </summary>
+        private String _studentNumber = "";
+        public String StudentNumber
+        {
+            get { return _studentNumber; }
+            set
+            {
+                _studentNumber = value;
+                RaisePropertyChanged("StudentNumber");
 
+            }
+        }
+
+        /// <summary>
+        /// 总得分
+        /// </summary>
+        private string _score = "";
+        public String Score
+        {
+            get { return _score; }
+            set
+            {
+                _score = value;
+                RaisePropertyChanged("Score");
+
+            }
+        }
+
+        /// <summary>
+        /// 总答题数
+        /// </summary>
+        public string _count = "0";
+        public String Count
+        {
+            get { return _count; }
+            set
+            {
+                _count = value;
+                RaisePropertyChanged("Count");
+
+            }
+        }
+
+        public void Set(Voter  voter)
+        {
+            StudentNumber = voter.VoterId;
+            Score = "学生总分"+voter.Score.ToString();
+            Count = "学生总答题数"+voter.Count.ToString();
+        }
+    }
     public class QuestionVM: ViewModelBase
     {
         /// <summary>

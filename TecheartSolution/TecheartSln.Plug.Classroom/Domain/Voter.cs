@@ -30,6 +30,10 @@ namespace TecheartSln.Plug.Classroom.Domain
         public int Score { get { int score = 0; foreach (var v in StatisticsAnswer.Values) { score += v; } return score; } }
 
         /// <summary>
+        /// 学生答题总数
+        /// </summary>
+        public int Count { get { return StatisticsAnswer.Count(); } }
+        /// <summary>
         /// 答题对错的统计(题目，分数)，如果未答对分数是0 否则分数有值
         /// </summary>
         public IDictionary<int,int> StatisticsAnswer { get; set; }
