@@ -82,4 +82,3 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\T
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Drive.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TecheartHostView.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TecheartHostView.baml
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csproj.CopyComplete
