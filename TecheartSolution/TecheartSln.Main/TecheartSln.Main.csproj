@@ -95,10 +95,6 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="TecheartVote">
-      <HintPath>..\commondll\TecheartVote.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="WindowsBase">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
