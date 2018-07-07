@@ -17,3 +17,4 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\Test\bin\Debug\Test.pdb
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb
+D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
