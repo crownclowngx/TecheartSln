@@ -26,7 +26,14 @@
                 <TextBlock Text="{Binding Path=ProcessList}"/>
                 <Button Content="打开文件" Command="{Binding Path=OpenQuestionFileCommand}"/>
                 <CheckBox Content="开始考试" IsChecked="{Binding Path=Start}"/>
-                <Button Content="保存" Command="{Binding Path=SaveCommand}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"/>
+                        <ColumnDefinition Width="50*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="保存" Command="{Binding Path=SaveCommand}" Grid.Column="0"/>
+                    <Button Content="导出到Excel" Command="{Binding Path=SaveCommand}" Grid.Column="1" IsEnabled="False"/>
+                </Grid>
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1" >

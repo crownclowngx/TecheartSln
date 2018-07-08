@@ -18,3 +18,5 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAss
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb
 D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Project\github\TecheartSln\TecheartSolution\Test\bin\Debug\Aspose.Cells.dll
+D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csproj.CopyComplete
