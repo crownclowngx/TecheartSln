@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\commondll\Aspose.Cells.dll</HintPath>
+    </Reference>
     <Reference Include="AvalonDock">
       <HintPath>..\commondll\Dock\AvalonDock.dll</HintPath>
       <Private>False</Private>
@@ -74,6 +77,7 @@
     <Compile Include="Domain\Boundary\QuestionSet.cs" />
     <Compile Include="Domain\Examination.cs" />
     <Compile Include="Domain\ExaminationQuestion.cs" />
+    <Compile Include="Domain\Utils\ExaminationAnalysisUtils.cs" />
     <Compile Include="Domain\Voter.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

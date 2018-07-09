@@ -20,6 +20,8 @@ using TecheartSln.Plug.Classroom.Domain.Boundary;
 using System.Collections.ObjectModel;
 using TecheartSln.Plug.Classroom.Domain;
 using TecheartSln.Plug.Classroom.Scene;
+using Aspose.Cells;
+using TecheartSln.Plug.Classroom.Domain.Utils;
 
 namespace TecheartSln.Plug.Classroom.ViewModel
 {
@@ -35,6 +37,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
 
         public SimpleExaminationViewModel(BaseScene scene, String json) : base(scene, json)
         {
+            CanAnalysis = true;
             init();
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
             var response=javaScriptSerializer.Deserialize<SimpleExaminationScene>(json);
@@ -148,7 +151,6 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             MessageSubscribeRelations.DeleteSubscribe(MessageType.WSDEDataEvent, this.StrGuid);
         }
         #endregion
-
         #region 窗口保存命令
         RelayCommand _saveCommand = null;
         override public ICommand SaveCommand
@@ -159,6 +161,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                 {
                     _saveCommand = new RelayCommand((p) =>
                     {
+                        CanAnalysis = true;
                         SimpleExaminationScene simpleExaminationScene = new SimpleExaminationScene()
                         {
                             TypeIdentity = TemplateGuid(),
@@ -184,7 +187,6 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
         #endregion
-
         #region 打开题目模板
         RelayCommand _openQuestionFileCommand = null;
         public ICommand OpenQuestionFileCommand
@@ -218,6 +220,44 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                 return _openQuestionFileCommand;
             }
 
+        }
+        #endregion
+        #region 分析按钮是否可用
+        private bool _canAnalysis;
+        public bool CanAnalysis
+        {
+            get { return _canAnalysis; }
+            set
+            {
+                _canAnalysis = value;
+                RaisePropertyChanged("CanAnalysis");
+            }
+        }
+        #endregion
+
+        #region 分析并导出到excel
+        RelayCommand _analysisCommand = null;
+        public ICommand AnalysisCommand
+        {
+            get
+            {
+                if (_analysisCommand == null)
+                {
+                    _analysisCommand = new RelayCommand(p =>
+                    {
+                        var dialog = new SaveFileDialog() { Filter = "2007以及之后Excel|*.xlsx", FileName = Title.Replace("*", "")+"成绩导出" };
+                        if (dialog.ShowDialog() == true)
+                        {
+                            var path = dialog.FileName;
+                            Workbook workbook = new Workbook();
+                            workbook.Worksheets.Clear();
+                            ExaminationAnalysisUtils.MakeStudentScore(workbook, examination.Voters);
+                            workbook.Save(path, SaveFormat.Xlsx);
+                        }
+                    }, p => true);
+                }
+                return _analysisCommand;
+            }
         }
         #endregion
 

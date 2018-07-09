@@ -6,63 +6,62 @@
              xmlns:local="clr-namespace:TecheartSln.Plug.Drive.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid >
-        <StackPanel>
-            <GroupBox  HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top"  IsEnabled="{Binding Mode=OneWay, Path=HostIsRegister}" MinWidth="466">
-                <GroupBox.Header>
-                    <Label Content="{Binding Mode=OneWay, Path=HostName}" />
-                </GroupBox.Header>
-                <ScrollViewer>
+    <Grid>
+        <ScrollViewer>
+            <StackPanel>
+                <GroupBox  HorizontalAlignment="Left"  Margin="10,10,0,0" VerticalAlignment="Top"  IsEnabled="{Binding Mode=OneWay, Path=HostIsRegister}" MinWidth="466" MaxHeight="768">
+                    <GroupBox.Header>
+                        <Label Content="{Binding Mode=OneWay, Path=HostName}" />
+                    </GroupBox.Header>
 
-                <StackPanel  VerticalAlignment="Top"  Margin="0,0,0,0">
-                    <Expander  VerticalAlignment="Top">
-                        <Expander.Header>
-                            <Label Content="密码表设置（第一步）" />
-                        </Expander.Header>
-                        <StackPanel Margin="20,0,0,0">
-                            <Expander>
-                                <Expander.Header>
-                                    <Label Content="说明"></Label>
-                                </Expander.Header>
-                                <TextBox TextWrapping="Wrap" IsEnabled="False" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding Mode=OneWay, Path=DescriptionCipherList}"/>
-                            </Expander>
-                            <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding Mode=TwoWay, Path=CipherListText}" Height="88"/>
-                            <Button Content="提交密码表修改" Command="{Binding Path=SetCipherListCommand}" />
-                        </StackPanel>
-                    </Expander>
-                    <Expander  VerticalAlignment="Top">
-                        <Expander.Header>
-                            <Label Content="基础设置（第二步）" />
-                        </Expander.Header>
-                        <StackPanel Margin="20,0,0,0">
-                            <Expander>
-                                <Expander.Header>
-                                    <Label Content="说明"></Label>
-                                </Expander.Header>
-                                <TextBox TextWrapping="Wrap" IsEnabled="False" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding Mode=OneWay, Path=DescriptionBaseConfig}"/>
-                            </Expander>
-                            <Grid Margin="0,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*" />
-                                    <ColumnDefinition Width="3*" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*" />
-                                    <RowDefinition Height="1*" />
-                                </Grid.RowDefinitions>
-                                <Label Grid.Column="0" Grid.Row="0" Content="信道"></Label>
-                                <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SelChannelList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
-                                <Label Grid.Column="0" Grid.Row="1" Content="频率"></Label>
-                                <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelFrequencyList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Frequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
-                            </Grid>
-                            <Button Content="提交基础配置" Command="{Binding Path=SetBaseConfigfCommand}" />
-                        </StackPanel>
-                    </Expander>
-                    <Expander>
-                        <Expander.Header>
-                            <Label Content="动态信息配置（第三步）" />
-                        </Expander.Header>
-                        <ScrollViewer>
+                    <StackPanel  VerticalAlignment="Top"  Margin="0,0,0,0">
+                        <Expander  VerticalAlignment="Top">
+                            <Expander.Header>
+                                <Label Content="密码表设置（第一步）" />
+                            </Expander.Header>
+                            <StackPanel Margin="20,0,0,0">
+                                <Expander>
+                                    <Expander.Header>
+                                        <Label Content="说明"></Label>
+                                    </Expander.Header>
+                                    <TextBox TextWrapping="Wrap" IsEnabled="False" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding Mode=OneWay, Path=DescriptionCipherList}"/>
+                                </Expander>
+                                <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding Mode=TwoWay, Path=CipherListText}" Height="88"/>
+                                <Button Content="提交密码表修改" Command="{Binding Path=SetCipherListCommand}" />
+                            </StackPanel>
+                        </Expander>
+                        <Expander  VerticalAlignment="Top">
+                            <Expander.Header>
+                                <Label Content="基础设置（第二步）" />
+                            </Expander.Header>
+                            <StackPanel Margin="20,0,0,0">
+                                <Expander>
+                                    <Expander.Header>
+                                        <Label Content="说明"></Label>
+                                    </Expander.Header>
+                                    <TextBox TextWrapping="Wrap" IsEnabled="False" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Text="{Binding Mode=OneWay, Path=DescriptionBaseConfig}"/>
+                                </Expander>
+                                <Grid Margin="0,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="3*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*" />
+                                        <RowDefinition Height="1*" />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Column="0" Grid.Row="0" Content="信道"></Label>
+                                    <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SelChannelList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                    <Label Grid.Column="0" Grid.Row="1" Content="频率"></Label>
+                                    <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelFrequencyList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Frequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                </Grid>
+                                <Button Content="提交基础配置" Command="{Binding Path=SetBaseConfigfCommand}" />
+                            </StackPanel>
+                        </Expander>
+                        <Expander>
+                            <Expander.Header>
+                                <Label Content="动态信息配置（第三步）" />
+                            </Expander.Header>
                             <StackPanel Margin="20,0,0,0">
                                 <ListBox ItemsSource="{Binding Path=DynamicConfigList}">
                                     <ListBox.ItemTemplate>
@@ -75,22 +74,21 @@
                                 </ListBox>
                                 <Button Content="提交动态配置" Command="{Binding Path=SetDynamicConfigCommand}" />
                             </StackPanel>
-                        </ScrollViewer>
-                    </Expander>
-                </StackPanel>
-                </ScrollViewer>
-            </GroupBox>
+                        </Expander>
+                    </StackPanel>
+                </GroupBox>
 
-            <Button Content="测试使用实例化一个单独的主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Command="{Binding Path=TestCreateHostCommand}"/>
-            <Button Content="测试删除一个主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Width="196" Command="{Binding Path=TestDeleteHostCommand}"/>
-            <TextBlock Text="Userid"></TextBlock>
-            <TextBox Text="{Binding Path=Userid, Mode=TwoWay}"></TextBox>
-            <TextBlock Text="Queid"></TextBlock>
-            <TextBox Text="{Binding Path=Queid, Mode=TwoWay}"></TextBox>
-            <TextBlock Text="QueSelect"></TextBlock>
-            <TextBox Text="{Binding Path=QueSelect, Mode=TwoWay}"></TextBox>
-            <Button Content="模拟生成一个自己发送的数据" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Width="196" Command="{Binding Path=TestCreateSubDataComeCommand}"/>
-        </StackPanel>
+                <Button Content="测试使用实例化一个单独的主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Command="{Binding Path=TestCreateHostCommand}"/>
+                <Button Content="测试删除一个主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Width="196" Command="{Binding Path=TestDeleteHostCommand}"/>
+                <TextBlock Text="Userid"></TextBlock>
+                <TextBox Text="{Binding Path=Userid, Mode=TwoWay}"></TextBox>
+                <TextBlock Text="Queid"></TextBlock>
+                <TextBox Text="{Binding Path=Queid, Mode=TwoWay}"></TextBox>
+                <TextBlock Text="QueSelect"></TextBlock>
+                <TextBox Text="{Binding Path=QueSelect, Mode=TwoWay}"></TextBox>
+                <Button Content="模拟生成一个自己发送的数据" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Width="196" Command="{Binding Path=TestCreateSubDataComeCommand}"/>
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </UserControl>

@@ -32,7 +32,7 @@
                         <ColumnDefinition Width="50*"/>
                     </Grid.ColumnDefinitions>
                     <Button Content="保存" Command="{Binding Path=SaveCommand}" Grid.Column="0"/>
-                    <Button Content="导出到Excel" Command="{Binding Path=SaveCommand}" Grid.Column="1" IsEnabled="False"/>
+                    <Button Content="分析考试(Excel)" Command="{Binding Path=AnalysisCommand}" Grid.Column="1" IsEnabled="{Binding Path=CanAnalysis}"/>
                 </Grid>
             </StackPanel>
         </ScrollViewer>

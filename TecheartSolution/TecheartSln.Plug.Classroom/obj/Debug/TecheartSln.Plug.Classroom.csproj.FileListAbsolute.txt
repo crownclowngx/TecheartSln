@@ -25,3 +25,4 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\De
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csproj.CoreCompileInputs.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csproj.CopyComplete
