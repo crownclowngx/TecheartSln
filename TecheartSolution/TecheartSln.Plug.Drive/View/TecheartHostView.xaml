@@ -12,6 +12,8 @@
                 <GroupBox.Header>
                     <Label Content="{Binding Mode=OneWay, Path=HostName}" />
                 </GroupBox.Header>
+                <ScrollViewer>
+
                 <StackPanel  VerticalAlignment="Top"  Margin="0,0,0,0">
                     <Expander  VerticalAlignment="Top">
                         <Expander.Header>
@@ -60,21 +62,23 @@
                         <Expander.Header>
                             <Label Content="动态信息配置（第三步）" />
                         </Expander.Header>
-                        <StackPanel Margin="20,0,0,0">
-                            <ListBox ItemsSource="{Binding Path=DynamicConfigList}">
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <CheckBox Content="{Binding Path=ShareName}" IsChecked="{Binding Path=IsSelect, Mode=TwoWay}"></CheckBox>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
-                            <Button Content="提交动态配置" Command="{Binding Path=SetDynamicConfigCommand}" />
-                        </StackPanel>
+                        <ScrollViewer>
+                            <StackPanel Margin="20,0,0,0">
+                                <ListBox ItemsSource="{Binding Path=DynamicConfigList}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <CheckBox Content="{Binding Path=ShareName}" IsChecked="{Binding Path=IsSelect, Mode=TwoWay}"></CheckBox>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Button Content="提交动态配置" Command="{Binding Path=SetDynamicConfigCommand}" />
+                            </StackPanel>
+                        </ScrollViewer>
                     </Expander>
                 </StackPanel>
-
+                </ScrollViewer>
             </GroupBox>
 
             <Button Content="测试使用实例化一个单独的主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Command="{Binding Path=TestCreateHostCommand}"/>
