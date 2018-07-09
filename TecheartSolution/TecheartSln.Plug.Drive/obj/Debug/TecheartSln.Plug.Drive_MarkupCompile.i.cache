@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\
 TecheartSln.Plug.Drive
 none
 false
@@ -12,8 +12,8 @@ DEBUG;TRACE
 
 5-869658007
 
-12998944922
-17813540501
+12-1210561026
+17-1421306092
 FoundationDataTemplate.xaml;FoundationStyle.xaml;View\ProducerMonitorView.xaml;View\RelationListView.xaml;View\TecheartHostView.xaml;
 
 True

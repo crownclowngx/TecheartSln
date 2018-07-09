@@ -70,3 +70,4 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\Techea
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csproj.CopyComplete
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csprojResolveAssemblyReference.cache
+D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csprojResolveAssemblyReference.cache

@@ -65,7 +65,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
             HostIsRegister = true;
             HostName = wsdePort.wsdeName;
             post = wsdePort;
-            post.OnDataCome += new WsdePort.OnDateComeHandler(OnDateComeHandler2);
+            post.OnDataCome += new WsdePort.OnDataComeHandler(OnDateComeHandler2);
         }
 
         private void OnDateComeHandler2(WsdePort handshake, SubSelect subselect)
