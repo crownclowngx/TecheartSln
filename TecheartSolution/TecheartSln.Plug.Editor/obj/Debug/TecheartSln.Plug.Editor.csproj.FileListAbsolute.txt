@@ -30,3 +30,5 @@ E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\TecheartS
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\TecheartSln.Plug.Editor.csproj.CoreCompileInputs.cache
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\View\StudentInfoEditView.g.cs
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\View\StudentInfoEditView.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\View\StudentInfoEditView.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\View\StudentInfoEditView.baml

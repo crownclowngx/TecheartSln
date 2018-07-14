@@ -25,7 +25,6 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\De
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csproj.CoreCompileInputs.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.pdb
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csproj.CopyComplete
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Classroom.dll
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Classroom.pdb
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csprojResolveAssemblyReference.cache

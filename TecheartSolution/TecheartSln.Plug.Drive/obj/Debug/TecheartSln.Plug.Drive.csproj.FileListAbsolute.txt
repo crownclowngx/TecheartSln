@@ -84,7 +84,6 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\Tech
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Drive.pdb
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TecheartHostView.g.cs
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\TecheartHostView.baml
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csproj.CopyComplete
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Drive.dll
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Drive.pdb
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csprojResolveAssemblyReference.cache
