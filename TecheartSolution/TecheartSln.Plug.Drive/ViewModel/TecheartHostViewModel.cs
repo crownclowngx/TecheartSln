@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Windows;
 using System.Windows.Input;
 using TecheartSln.Core.Command;
 using TecheartSln.Core.Message.DeliverProvider;
@@ -66,6 +68,14 @@ namespace TecheartSln.Plug.Drive.ViewModel
             HostName = wsdePort.wsdeName;
             post = wsdePort;
             post.OnDataCome += new WsdePort.OnDataComeHandler(OnDateComeHandler2);
+            Thread.Sleep(1000);
+            OnSetCipherList();
+            Thread.Sleep(1000);
+            OnSetBaseConfig();
+            Thread.Sleep(1000);
+            OnSetDynamicConfig();
+
+            MessageBox.Show("系统已配置成功");
         }
 
         private void OnDateComeHandler2(WsdePort handshake, SubSelect subselect)
@@ -143,7 +153,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
         /// <summary>
         /// 密码表
         /// </summary>
-        private IList<String> _cipherList = new List<String>();
+        private IList<String> _cipherList = new List<String>() { "1","2","3","4"};
         public String CipherListText
         {
             get { return String.Join(Environment.NewLine, _cipherList); }
@@ -178,7 +188,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
         {
             get { return _selChannelList; }
         }
-        private int _channel;
+        private int _channel=1;
         public int Channel
         {
             get { return _channel; }
@@ -232,6 +242,19 @@ namespace TecheartSln.Plug.Drive.ViewModel
 
         #endregion
         #region 命令
+        RelayCommand _setDefaultCommand = null;
+        public ICommand SetDefaultCommand
+        {
+            get
+            {
+                if (_setDefaultCommand == null)
+                {
+                    _setDefaultCommand = new RelayCommand(p => { OnSetCipherList(); Thread.Sleep(1000); OnSetBaseConfig(); Thread.Sleep(1000); OnSetDynamicConfig(); }, p => true);
+                }
+                return _setDefaultCommand;
+            }
+        }
+
         RelayCommand _setDynamicConfigCommand = null;
         public ICommand SetDynamicConfigCommand
         {

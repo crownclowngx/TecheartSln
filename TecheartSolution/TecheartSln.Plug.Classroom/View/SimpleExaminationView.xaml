@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:TecheartSln.Plug.Classroom.View"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="500">
@@ -17,69 +18,83 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="35*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*"></ColumnDefinition>
+                <ColumnDefinition Width="45*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="0" >
+                <StackPanel>
+                    <Button Content="打开题目文件" Command="{Binding Path=OpenQuestionFileCommand}"/>
+                    <TextBlock Text="题目监控"/>
+
+                    <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=QuestionList}" MaxHeight="400" CanUserSortColumns="True" CanUserAddRows="False" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=QuestionNumber}" Header="题目编号" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=AnswerAndScore}" Header="题目信息" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=Statistics}" Header="答案分布(答案/人数)" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="0"  Grid.Column="1">
+                <StackPanel>
+                    <Button Content="打开学生文件" Command="{Binding Path=OpenStudentInfoFileCommand}" Grid.Column="1" />
+                    <TextBlock Text="学生监控"/>
+
+                    <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=StudentList}" MaxHeight="400" CanUserSortColumns="True" CanUserAddRows="False" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Path=MappingNumber}" Header="学生学号" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=Name}" Header="学生姓名" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=StudentNumber}" Header="终端编号" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=Score}" Header="学生总分" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=Count}" Header="学生总答题数" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridCheckBoxColumn Binding="{Binding IsLogin}" Header="是否登录"
+                                            ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+                                            EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+
+                            </DataGridCheckBoxColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="0" >
             <StackPanel>
                 <TextBlock Text="{Binding Path=ProcessList}"/>
-                <Button Content="打开文件" Command="{Binding Path=OpenQuestionFileCommand}"/>
                 <CheckBox Content="开始考试" IsChecked="{Binding Path=Start}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="54*"/>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="43*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="保存考试" Command="{Binding Path=SaveCommand}" Grid.Column="0"/>
+                    
+                    <Button Content="分析考试(Excel)" Command="{Binding Path=AnalysisCommand}" Grid.Column="2" IsEnabled="{Binding Path=CanAnalysis}"/>
+                    
+                </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="50*"/>
                         <ColumnDefinition Width="50*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="保存" Command="{Binding Path=SaveCommand}" Grid.Column="0"/>
-                    <Button Content="分析考试(Excel)" Command="{Binding Path=AnalysisCommand}" Grid.Column="1" IsEnabled="{Binding Path=CanAnalysis}"/>
+                    
+                   
                 </Grid>
-            </StackPanel>
-        </ScrollViewer>
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1" >
-            <StackPanel>
-                <TextBlock Text="题目监控"/>
-                <ItemsControl ItemsSource="{Binding Path=QuestionList}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="80*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Path=QuestionNumber}"></TextBlock>
-                                <StackPanel Margin="8 0 0 0" Grid.Column="1">
-                                    <TextBlock FontWeight="Bold" Text="{Binding Path=AnswerAndScore}" />
-                                    <TextBlock Text="{Binding Path=Statistics}" />
-                                </StackPanel>
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </StackPanel>
-        </ScrollViewer>
-
-
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="2" >
-            <StackPanel>
-                <TextBlock Text="学生监控"/>
-                <ItemsControl ItemsSource="{Binding Path=StudentList}">
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="20*" />
-                                    <ColumnDefinition Width="80*"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Text="{Binding Path=StudentNumber}"></TextBlock>
-                                <StackPanel Margin="8 0 0 0" Grid.Column="1">
-                                    <TextBlock FontWeight="Bold" Text="{Binding Path=Score}" />
-                                    <TextBlock Text="{Binding Path=Count}" />
-                                </StackPanel>
-                            </Grid>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                
             </StackPanel>
         </ScrollViewer>
     </Grid>

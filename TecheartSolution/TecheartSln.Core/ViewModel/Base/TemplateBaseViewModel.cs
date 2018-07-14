@@ -66,12 +66,19 @@ namespace TecheartSln.Core.ViewModel.Base
             {
                 this.Path = dialog.FileName;
                 scene.Title = this.Title;
-                FileStream fs = new FileStream(dialog.FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                FileStream fs =  new FileStream(dialog.FileName, FileMode.Create, FileAccess.ReadWrite); ;
                 StreamWriter sw = new StreamWriter(fs);
-                JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-                sw.WriteLine(javaScriptSerializer.Serialize(scene));
-                sw.Flush();
-                sw.Close();
+                try
+                {
+                    JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+                    sw.WriteLine(javaScriptSerializer.Serialize(scene));
+                    sw.Flush();
+                    sw.Close();
+                }
+                catch(Exception ex)
+                {
+                    sw.Dispose();
+                }
             }
         }
 

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\
 TecheartSln.Main
 none
 false
 DEBUG;TRACE
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\App.xaml
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\App.xaml
 3-409822592
 
 12496653785
-21-1232303420
+21-1732497842
 MainWindow.xaml;Utils\FileTemplateList.xaml;Utils\ToolsList.xaml;
 
 False

@@ -20,6 +20,16 @@ namespace TecheartSln.Plug.Classroom.Domain
         public String VoterId { get; set; }
 
         /// <summary>
+        /// 学生姓名(投票者编号)
+        /// </summary>
+        public String VoterName { get; set; }
+
+        /// <summary>
+        /// 学生学号(外界可识别学生编号)
+        /// </summary>
+        public String VoterMappingNumber { get; set; }
+
+        /// <summary>
         /// 选择列表 (题目，选项)
         /// </summary>
         public IDictionary<int,String> Statistics { get; set; }

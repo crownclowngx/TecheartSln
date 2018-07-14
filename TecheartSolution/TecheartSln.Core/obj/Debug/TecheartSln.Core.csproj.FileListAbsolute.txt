@@ -70,3 +70,15 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\Techea
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csproj.CopyComplete
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csprojResolveAssemblyReference.cache
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\bin\Debug\TecheartSln.Core.dll
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\bin\Debug\TecheartSln.Core.pdb
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core_MarkupCompile.cache
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core_MarkupCompile.lref
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\FoundationDataTemplate.baml
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\FoundationStyle.baml
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.g.resources
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csproj.CoreCompileInputs.cache
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.dll
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.pdb
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Core.dll
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Core.pdb

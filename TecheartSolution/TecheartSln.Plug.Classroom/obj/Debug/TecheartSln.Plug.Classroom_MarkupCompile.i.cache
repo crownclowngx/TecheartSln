@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\
 TecheartSln.Plug.Classroom
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 353804051
 
-17-1897643438
-221002764769
+20-92876597
+22681404397
 FoundationDataTemplate.xaml;FoundationStyle.xaml;View\SimpleExaminationView.xaml;
 
-False
+True
 

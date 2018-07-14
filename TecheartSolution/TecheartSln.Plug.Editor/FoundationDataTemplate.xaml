@@ -9,4 +9,8 @@
     <DataTemplate x:Key="TecheartSlnPlugEditorQuestionEditorViewTemplate">
         <localview:QuestionEditorView />
     </DataTemplate>
+
+    <DataTemplate x:Key="TecheartSlnPlugEditorStudentInfoEditorViewTemplate">
+        <localview:StudentInfoEditView />
+    </DataTemplate>
 </ResourceDictionary>

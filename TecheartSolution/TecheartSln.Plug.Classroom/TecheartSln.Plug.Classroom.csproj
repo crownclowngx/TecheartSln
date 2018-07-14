@@ -38,25 +38,25 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="ICSharpCode.AvalonEdit">
-      <HintPath>F:\proj\TecheartSolution\commondll\Themes\ICSharpCode.AvalonEdit.dll</HintPath>
+      <HintPath>..\commondll\ICSharpCode.AvalonEdit.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MaterialDesignColors">
-      <HintPath>F:\proj\TecheartSolution\commondll\Themes\MaterialDesignColors.dll</HintPath>
+      <HintPath>..\commondll\MaterialDesignColors.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf">
-      <HintPath>F:\proj\TecheartSolution\commondll\Themes\MaterialDesignThemes.Wpf.dll</HintPath>
+      <HintPath>..\commondll\MaterialDesignThemes.Wpf.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="ShowMeTheXAML">
-      <HintPath>F:\proj\TecheartSolution\commondll\Themes\ShowMeTheXAML.dll</HintPath>
+      <HintPath>..\commondll\ShowMeTheXAML.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ShowMeTheXAML.AvalonEdit">
-      <HintPath>F:\proj\TecheartSolution\commondll\Themes\ShowMeTheXAML.AvalonEdit.dll</HintPath>
+      <HintPath>..\commondll\ShowMeTheXAML.AvalonEdit.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -75,9 +75,12 @@
     <Compile Include="Domain\Boundary\Convert.cs" />
     <Compile Include="Domain\Boundary\Question.cs" />
     <Compile Include="Domain\Boundary\QuestionSet.cs" />
+    <Compile Include="Domain\Boundary\StudentInfo.cs" />
+    <Compile Include="Domain\Boundary\StudentSet.cs" />
     <Compile Include="Domain\Examination.cs" />
     <Compile Include="Domain\ExaminationQuestion.cs" />
     <Compile Include="Domain\Utils\ExaminationAnalysisUtils.cs" />
+    <Compile Include="Domain\Utils\StringUtils.cs" />
     <Compile Include="Domain\Voter.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

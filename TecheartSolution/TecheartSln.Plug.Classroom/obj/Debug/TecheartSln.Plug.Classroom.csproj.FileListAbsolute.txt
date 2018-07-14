@@ -26,3 +26,17 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\De
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csproj.CopyComplete
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Classroom.dll
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Classroom.pdb
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csprojResolveAssemblyReference.cache
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\View\SimpleExaminationView.g.cs
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom_MarkupCompile.cache
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom_MarkupCompile.lref
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\FoundationDataTemplate.baml
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\FoundationStyle.baml
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\View\SimpleExaminationView.baml
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.g.resources
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.csproj.CoreCompileInputs.cache
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.dll
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Classroom\obj\Debug\TecheartSln.Plug.Classroom.pdb

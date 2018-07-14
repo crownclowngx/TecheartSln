@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TecheartSln.Main"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Techeart课堂互动平台" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -19,9 +19,6 @@
             </MenuItem>
             <MenuItem Header="工具">
                 <MenuItem Header="工具列表" Click="MenuItem_Click"/>
-            </MenuItem>
-            <MenuItem Header="布局">
-               
             </MenuItem>
         </Menu>
 

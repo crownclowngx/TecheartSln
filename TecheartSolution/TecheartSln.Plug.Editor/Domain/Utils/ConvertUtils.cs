@@ -39,5 +39,25 @@ namespace TecheartSln.Plug.Editor.Domain.Utils
                 Score = question.Score,
             };
         }
+
+        public static  VMStudentInfo Convert(this  StudentInfo request)
+        {
+            return new VMStudentInfo()
+            {
+                ClientNumber = request.ClientNumber,
+                Name = request.Name,
+                Number = request.Number,
+            };
+        }
+
+        public static StudentInfo Convert(this VMStudentInfo request)
+        {
+            return new StudentInfo()
+            {
+                ClientNumber = request.ClientNumber,
+                Name = request.Name,
+                Number = request.Number,
+            };
+        }
     }
 }

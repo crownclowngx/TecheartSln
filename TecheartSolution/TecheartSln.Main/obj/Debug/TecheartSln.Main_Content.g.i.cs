@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("app.xaml")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("%e5%9b%be%e6%a0%87%e7%bb%bf256%e4%bd%8d.ico")]
 
 

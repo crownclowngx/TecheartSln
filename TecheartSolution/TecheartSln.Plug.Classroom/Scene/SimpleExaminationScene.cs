@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TecheartSln.Core.Scene;
 using TecheartSln.Plug.Classroom.Domain;
+using TecheartSln.Plug.Classroom.Domain.Boundary;
 
 namespace TecheartSln.Plug.Classroom.Scene
 {
@@ -20,10 +21,21 @@ namespace TecheartSln.Plug.Classroom.Scene
             if (ExaminationQuestion != null)
                 examination.ExaminationQuestions = ExaminationQuestion;
             if (VoterScene != null)
+            {
+                foreach (var v in VoterScene)
+                {
+                    if (!examination.Voters.Any(k => k.VoterId == v.VoterId))
+                    {
+                        examination.Voters.Add(v.convert());
+                    }
+                    
+                }
                 foreach (var v in VoterScene)
                 {
                     examination.Add(v.VoterId, v.QuestionNumber, v.Select);
                 }
+            }
+
             return examination;
         }
     }

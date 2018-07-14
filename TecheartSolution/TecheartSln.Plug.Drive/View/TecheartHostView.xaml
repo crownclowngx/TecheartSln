@@ -51,7 +51,7 @@
                                         <RowDefinition Height="1*" />
                                     </Grid.RowDefinitions>
                                     <Label Grid.Column="0" Grid.Row="0" Content="信道"></Label>
-                                    <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SelChannelList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                    <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SelChannelList}" SelectedIndex="1"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
                                     <Label Grid.Column="0" Grid.Row="1" Content="频率"></Label>
                                     <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelFrequencyList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Frequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
                                 </Grid>
@@ -77,7 +77,7 @@
                         </Expander>
                     </StackPanel>
                 </GroupBox>
-
+                <Button Content="启用默认配置" HorizontalAlignment="Left"  VerticalAlignment="Top"   Command="{Binding Path=SetDefaultCommand}"/>
                 <Button Content="测试使用实例化一个单独的主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Command="{Binding Path=TestCreateHostCommand}"/>
                 <Button Content="测试删除一个主机实例" HorizontalAlignment="Left"  VerticalAlignment="Top"  RenderTransformOrigin="0.033,-0.73" Width="196" Command="{Binding Path=TestDeleteHostCommand}"/>
                 <TextBlock Text="Userid"></TextBlock>

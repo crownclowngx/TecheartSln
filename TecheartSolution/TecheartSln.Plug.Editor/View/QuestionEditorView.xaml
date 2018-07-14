@@ -18,7 +18,7 @@
                     </DataGridTextColumn>
                     <DataGridTextColumn Binding="{Binding Path=Answoer}" Header="答案" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     </DataGridTextColumn>
-                    <DataGridTextColumn Binding="{Binding Path=Score}" Header="题目分树" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    <DataGridTextColumn Binding="{Binding Path=Score}" Header="题目分数" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
                     </DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>

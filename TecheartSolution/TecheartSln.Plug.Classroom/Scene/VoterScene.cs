@@ -22,5 +22,15 @@ namespace TecheartSln.Plug.Classroom.Scene
         /// 选择结果
         /// </summary>
         public String Select { get; set; }
+
+        /// <summary>
+        /// 学生对应学号
+        /// </summary>
+        public String MappingNumber { get; set; }
+
+        /// <summary>
+        /// 学生姓名
+        /// </summary>
+        public String Name { get; set; }
     }
 }

@@ -102,7 +102,7 @@ namespace TecheartSln.Plug.Editor.ViewModel
 
         public new static string GetName()
         {
-            return "简易问题编辑器";
+            return "题目信息编辑器";
         }
 
         /// <summary>

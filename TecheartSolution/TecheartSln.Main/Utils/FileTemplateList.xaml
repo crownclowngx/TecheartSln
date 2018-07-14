@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TecheartSln.Main.Utils"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="创建文件" Height="450" Width="800">
+        Title="创建文件" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

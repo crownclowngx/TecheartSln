@@ -35,6 +35,13 @@ namespace TecheartSln.Plug.Editor
                                     "TecheartSlnPlugEditorQuestionEditorViewTemplate") as DataTemplate;
 
             paneSel.RegisterDataTemplate(typeof(QuestionEditorViewModel), template2);
+
+            var template3 = ResourceLocator.GetResource<DataTemplate>(
+                                   Assembly.GetAssembly(typeof(StudentInfoEditorViewModel)).GetName().Name,
+                                   "FoundationDataTemplate.xaml",
+                                   "TecheartSlnPlugEditorStudentInfoEditorViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(StudentInfoEditorViewModel), template3);
         }
     }
 }

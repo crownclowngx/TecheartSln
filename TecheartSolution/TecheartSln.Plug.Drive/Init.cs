@@ -20,7 +20,7 @@ namespace TecheartSln.Plug.Drive
     {
         public IList<ToolViewModel> GetToolViewModel()
         {
-            return new List<ToolViewModel>() { new RelationListViewModel(),new ProducerMonitorViewModel(),new TecheartHostViewModel()};
+            return new List<ToolViewModel>() { new RelationListViewModel() { IsVisible = false },new ProducerMonitorViewModel() { IsVisible = false }, new TecheartHostViewModel() { IsVisible = false } };
         }
 
         public void RedisterStyles(PanesStyleSelectorDynamic selectPanesStyle)

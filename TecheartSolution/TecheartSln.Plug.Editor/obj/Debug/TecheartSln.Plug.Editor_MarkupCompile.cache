@@ -4,17 +4,17 @@
 library
 C#
 .cs
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\
+E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Editor\obj\Debug\
 TecheartSln.Plug.Editor
 none
 false
 DEBUG;TRACE
 
-3836103136
+41151158121
 
-111720138793
-21-198365561
-FoundationDataTemplate.xaml;FoundationStyle.xaml;View\QuestionEditorView.xaml;
+11735773061
+21-1263035873
+FoundationDataTemplate.xaml;FoundationStyle.xaml;View\QuestionEditorView.xaml;View\StudentInfoEditView.xaml;
 
-True
+False
 
