@@ -1,6 +1,8 @@
 ﻿using Aspose.Cells;
+using Aspose.Cells.Charts;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,9 +20,35 @@ namespace Test
 
                 Console.WriteLine(Guid.NewGuid().ToString());
             }
+            Workbook workbook = new Workbook();
+            workbook.Worksheets.Clear();
+            workbook.Worksheets.Add();
+            Worksheet sheet = workbook.Worksheets[workbook.Worksheets.Count() - 1];
+            sheet.Name = "统计图";
+            sheet.Cells["A1"].PutValue("成绩");
+            sheet.Cells["B1"].PutValue("总数量");
+            int row = 1;
+            foreach (var v in new List<int>() { 90, 70, 60, 0 })
+            {
+                sheet.Cells[row, 0].PutValue(v);
+                sheet.Cells[row, 1].PutValue(random.Next(10, 50));
+                row += 1;
+            }
+            Cells cells = workbook.Worksheets[0].Cells;
 
-           
-            Console.Read();
+
+            workbook.Worksheets[0].Charts.Add(ChartType.Bar, 1, 1, 25, 10);
+            Chart chart = workbook.Worksheets[0].Charts[0];
+            chart.Title.Text = "Sales By Region For Years";
+            chart.Title.Font.Color = Color.Gray;
+            chart.Title.Font.IsBold = true;
+            chart.Title.Font.Size = 12;
+            workbook.Save("test.xlsx", SaveFormat.Xlsx);
+
+            //FileStream fstream = new FileStream("test1.xlsx", FileMode.Open);
+            //Workbook workbook = new Workbook(fstream);
+            //Chart chart = workbook.Worksheets[0].Charts[0];
+            //Console.Read();
         }
     }
 }

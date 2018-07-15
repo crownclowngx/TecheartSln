@@ -102,6 +102,18 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
         #endregion
+        #region 不欢迎外来者
+        private bool _refuseOutOfStudentList=true;
+        public bool RefuseOutOfStudentList
+        {
+            get { return _refuseOutOfStudentList; }
+            set
+            {
+                _refuseOutOfStudentList = value;
+                RaisePropertyChanged("RefuseOutOfStudentList");
+            }
+        }
+        #endregion
         #region 考试题目VM
         private ObservableCollection<QuestionVM> _questionList = new ObservableCollection<QuestionVM>();
         public ObservableCollection<QuestionVM> QuestionList
@@ -275,7 +287,6 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
         #endregion
-
         #region 分析并导出到excel
         RelayCommand _analysisCommand = null;
         public ICommand AnalysisCommand
@@ -332,6 +343,10 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                         }
                         StudentLogin(response);
                         if (String.IsNullOrWhiteSpace(response.SubVoterResult) || response.SubVoterResult.Equals("login"))
+                        {
+                            return;
+                        }
+                        if(!StudentList.Any(k => k.StudentNumber == response.SubVoterNumber))
                         {
                             return;
                         }

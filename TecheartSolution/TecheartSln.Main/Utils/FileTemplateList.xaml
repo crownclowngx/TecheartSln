@@ -30,7 +30,7 @@
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding Path=FileName}" FontSize="30"></TextBlock>
+                            <TextBlock Text="{Binding Path=FileName}" FontSize="20"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
@@ -44,7 +44,11 @@
         </Grid>
         <StackPanel  Grid.Row="0" Grid.Column="1" >
             <TextBlock Text="{Binding Path=SelectedItem.FileDesc}" TextWrapping="Wrap" FontSize="15"></TextBlock>
-            <TextBlock Text="{Binding Path=SelectedItem.TemplateGuid}" TextWrapping="Wrap" ></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="平台注册号：" TextWrapping="Wrap" ></TextBlock>
+                <TextBlock Text="{Binding Path=SelectedItem.TemplateGuid}" TextWrapping="Wrap" ></TextBlock>
+            </StackPanel>
+            <TextBlock Text="该号码是一个唯一标识，可以通过该标识查询到插件开发者以及其支持情况，和是否是平台承认的插件" TextWrapping="Wrap"></TextBlock>
         </StackPanel>
         
     </Grid>

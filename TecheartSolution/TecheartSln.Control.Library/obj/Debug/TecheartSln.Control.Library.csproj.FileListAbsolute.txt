@@ -1,0 +1,8 @@
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Control.Library.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Control.Library.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Control.Library\obj\Debug\TecheartSln.Control.Library.Properties.Resources.resources
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Control.Library\obj\Debug\TecheartSln.Control.Library.csproj.GenerateResource.Cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Control.Library\obj\Debug\TecheartSln.Control.Library.csproj.CoreCompileInputs.cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Control.Library\obj\Debug\TecheartSln.Control.Library.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Control.Library\obj\Debug\TecheartSln.Control.Library.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Control.Library\obj\Debug\TecheartSln.Control.Library.csprojResolveAssemblyReference.cache

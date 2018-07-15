@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="TecheartVote">
       <HintPath>..\commondll\TecheartVote.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>

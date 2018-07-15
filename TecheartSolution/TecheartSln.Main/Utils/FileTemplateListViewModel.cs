@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TecheartSln.Core.Command;
 using TecheartSln.Core.ViewModel.Base;
@@ -77,7 +78,13 @@ namespace TecheartSln.Main.Utils
                         {
                             return;
                         }
+                        if (String.IsNullOrWhiteSpace(FileName))
+                        {
+                            MessageBox.Show("需要起个名字啊喂(╯‵□′)╯︵┻━┻");
+                            return;
+                        }
                         Workspace.This.CreateFile((TemplateBaseViewModel)Activator.CreateInstance(SelectedItem.TemplateType,new object[] { _fileName }));
+                        
                     }, 
                     p => true);
                 }

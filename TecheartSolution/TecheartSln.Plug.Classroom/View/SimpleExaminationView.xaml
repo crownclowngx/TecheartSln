@@ -74,7 +74,10 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="0" >
             <StackPanel>
                 <TextBlock Text="{Binding Path=ProcessList}"/>
-                <CheckBox Content="开始考试" IsChecked="{Binding Path=Start}"/>
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox Content="开始考试" IsChecked="{Binding Path=Start, Mode=TwoWay}"/>
+                    <CheckBox Content="不欢迎外来者" IsChecked="{Binding Path=RefuseOutOfStudentList, Mode=TwoWay}"/>
+                </StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="54*"/>
