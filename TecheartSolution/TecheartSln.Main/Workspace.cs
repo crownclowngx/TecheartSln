@@ -181,21 +181,30 @@ namespace TecheartSln.Main
 
         private TemplateBaseViewModel GetViewModel(String json)
         {
-            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-            var baseScene = javaScriptSerializer.Deserialize<BaseScene>(json);
-            if (baseScene == null)
+            try
             {
+                JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+                var baseScene = javaScriptSerializer.Deserialize<BaseScene>(json);
+                if (baseScene == null)
+                {
+                    return null;
+                }
+                foreach (var v in plugInit.TemplateBaseViewModels)
+                {
+                    if (v.Identifier == baseScene.TypeIdentity)
+                    {
+                        var tvm = (TemplateBaseViewModel)Activator.CreateInstance(v.TemplateType, new object[] { baseScene, json });
+                        return tvm;
+                    }
+                }
                 return null;
             }
-            foreach(var v in plugInit.TemplateBaseViewModels)
+            catch (Exception ex)
             {
-                if(v.Identifier== baseScene.TypeIdentity)
-                {
-                    var tvm=(TemplateBaseViewModel)Activator.CreateInstance(v.TemplateType, new object[] { baseScene, json });
-                    return tvm;
-                }
+                MessageBox.Show("文件打开失败了这可能不是Techeart文件");
+
+                return null;
             }
-            return null;
         }
     }
 }

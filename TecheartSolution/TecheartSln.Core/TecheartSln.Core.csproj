@@ -82,6 +82,7 @@
     <Compile Include="ViewModel\Base\TemplateBaseViewModel.cs" />
     <Compile Include="ViewModel\Base\ToolViewModel.cs" />
     <Compile Include="ViewModel\Base\ViewModelBase.cs" />
+    <Compile Include="ViewModel\BindingProxy.cs" />
     <Compile Include="View\Pane\PanesStyleSelectorDynamic.cs" />
     <Compile Include="View\Pane\PanesTemplateSelectorDynamic.cs" />
   </ItemGroup>

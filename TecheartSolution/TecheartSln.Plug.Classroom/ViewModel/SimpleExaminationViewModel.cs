@@ -47,6 +47,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                 QuestionVM vm = new QuestionVM();
                 vm.Set(v);
                 QuestionList.Add(vm);
+                TotalScore += v.Score;
             }
 
             foreach(var v in examination.Voters)
@@ -140,6 +141,33 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
         #endregion
+
+        #region 成绩范围
+        private ObservableCollection<RegionVM> _regionList = new ObservableCollection<RegionVM>() { new RegionVM() { Score=0, ScoreExplain="" } };
+        public ObservableCollection<RegionVM> RegionList
+        {
+            get { return _regionList; }
+            set
+            {
+                _regionList = value;
+                RaisePropertyChanged("RegionList");
+                base.ViewChange();
+            }
+        }
+        #endregion
+
+        #region 最大分数
+        private int _totalScore = 0;
+        public int TotalScore
+        {
+            get { return _totalScore; }
+            set
+            {
+                _totalScore = value;
+                RaisePropertyChanged("TotalScore");
+            }
+        }
+        #endregion
         #region 窗口关闭命令
         RelayCommand _closeCommand = null;
         override public ICommand CloseCommand
@@ -229,8 +257,10 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                             QuestionVM vm = new QuestionVM();
                             vm.Set(v);
                             QuestionList.Add(vm);
+                            TotalScore += v.Score;
                         }
                         ProcessList += "->已打开考试文件";
+                       
                     }, (p) => true);
                 }
 
@@ -306,6 +336,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                                 Workbook workbook = new Workbook();
                                 workbook.Worksheets.Clear();
                                 ExaminationAnalysisUtils.MakeStudentScore(workbook, examination.Voters);
+                                ExaminationAnalysisUtils.MakeStudentDistribution(workbook, examination.Voters, new List<int>() { 90, 60, 0 });
                                 workbook.Save(path, SaveFormat.Xlsx);
                                 ProcessList += "->已导出到Excel";
                             }
@@ -346,7 +377,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                         {
                             return;
                         }
-                        if(!StudentList.Any(k => k.StudentNumber == response.SubVoterNumber))
+                        if(!StudentList.Any(k => k.StudentNumber == response.SubVoterNumber) && RefuseOutOfStudentList)
                         {
                             return;
                         }
@@ -547,6 +578,37 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                 sb.Append(",  ");
             }
             Statistics = sb.ToString();
+        }
+    }
+
+    public class RegionVM : ViewModelBase
+    {
+        private int _score;
+        /// <summary>
+        /// 分数
+        /// </summary>
+        public int Score {
+            get { return _score; }
+            set
+            {
+                _score = value;
+                RaisePropertyChanged("Score");
+
+            }
+        }
+
+        private String _scoreExplain = "";
+        /// <summary>
+        /// 对于分数的说明
+        /// </summary>
+        public String ScoreExplain {
+            get { return _scoreExplain; }
+            set
+            {
+                _scoreExplain = value;
+                RaisePropertyChanged("ScoreExplain");
+
+            }
         }
     }
 }

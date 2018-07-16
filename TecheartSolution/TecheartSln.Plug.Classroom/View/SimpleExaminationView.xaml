@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:TecheartSln.Plug.Classroom.View"
+             xmlns:localbinding="clr-namespace:TecheartSln.Core.ViewModel;assembly=TecheartSln.Core"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="500">
     <UserControl.Resources>
@@ -13,13 +14,14 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.TextBlock.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <localbinding:BindingProxy x:Key="proxy" Data="{Binding}"></localbinding:BindingProxy>
         </ResourceDictionary>
     </UserControl.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="85*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="75*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
@@ -85,17 +87,30 @@
                         <ColumnDefinition Width="43*"/>
                     </Grid.ColumnDefinitions>
                     <Button Content="保存考试" Command="{Binding Path=SaveCommand}" Grid.Column="0"/>
-                    
                     <Button Content="分析考试(Excel)" Command="{Binding Path=AnalysisCommand}" Grid.Column="2" IsEnabled="{Binding Path=CanAnalysis}"/>
                     
                 </Grid>
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="50*"/>
-                        <ColumnDefinition Width="50*"/>
-                    </Grid.ColumnDefinitions>
-                    
-                   
+                    <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=RegionList}" MaxHeight="400" CanUserSortColumns="True" CanUserAddRows="True" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="滑块" ></TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Slider Minimum="0" Maximum="{Binding Path=Data.TotalScore, Mode=OneWay ,Source={StaticResource proxy}}" Value="{Binding Path=Score, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSnapToTickEnabled="True" MinWidth="100"></Slider>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding Path=Score, Mode=TwoWay}" Header="分数" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Path=ScoreExplain, Mode=TwoWay}" Header="分数说明" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
                 
             </StackPanel>

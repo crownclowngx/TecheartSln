@@ -59,23 +59,21 @@ namespace TecheartSln.Plug.Classroom.Domain.Utils
             int row = 1;
             foreach (var v in scores)
             {
-                sheet.Cells[row, 0].PutValue(v);
+                sheet.Cells[row, 0].PutValue(v+"分以上");
                 sheet.Cells[row, 1].PutValue(voters.Count(k => k.Score >= v));
                 row += 1;
             }
             sheet.Name = "统计图";
-            sheet.Charts.Add(ChartType.Bar, 1, 1, 25, 10);
+            sheet.Charts.Add(ChartType.Column3DStacked, 1, 2, 25, 10);
             Chart chart = sheet.Charts[0];
 
-            chart.Title.Text = "Sales By Region For Years";
+            chart.Title.Text = "分数段统计";
             chart.Title.Font.Color = Color.Gray;
             chart.Title.Font.IsBold = true;
             chart.Title.Font.Size = 12;
 
-            chart.NSeries.Add(sheet.Name + "!" + "B2" + ":" + "B" + (scores.Count + 1), false);
+            chart.NSeries.Add(sheet.Name + "!" + "B2" + ":" + "B" + (scores.Count + 1), true);
             chart.NSeries.CategoryData = sheet.Name + "!A2:A"+ (scores.Count + 1);
-
-            Cells cells = sheet.Cells;
         }
     }
 }
