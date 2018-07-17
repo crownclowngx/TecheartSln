@@ -20,8 +20,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="75*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="70*"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="1">
@@ -91,7 +91,7 @@
                     
                 </Grid>
                 <Grid>
-                    <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=RegionList}" MaxHeight="400" CanUserSortColumns="True" CanUserAddRows="True" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
+                    <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=RegionList}" MaxHeight="400" CanUserDeleteRows="True"  CanUserSortColumns="True" CanUserAddRows="True" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.HeaderTemplate>

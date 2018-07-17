@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TecheartSln.Plug.Classroom.Scene;
+using TecheartSln.Plug.Classroom.ViewModel;
 
 namespace TecheartSln.Plug.Classroom.Domain.Boundary
 {
@@ -39,6 +40,24 @@ namespace TecheartSln.Plug.Classroom.Domain.Boundary
                 StatisticsAnswer = new Dictionary<int, int>(),
                 VoterMappingNumber = studentInfo.MappingNumber,
                 VoterName = studentInfo.Name,
+            };
+        }
+
+        public  static RegionVM convert(this RegionScene request)
+        {
+            return new RegionVM()
+            {
+                Score = request.Score,
+                ScoreExplain = request.ScoreExplain,
+            };
+        }
+
+        public static RegionScene convert(this RegionVM request)
+        {
+            return new RegionScene()
+            {
+                Score = request.Score,
+                ScoreExplain = request.ScoreExplain,
             };
         }
     }

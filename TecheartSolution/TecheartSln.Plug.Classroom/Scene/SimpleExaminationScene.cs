@@ -15,6 +15,8 @@ namespace TecheartSln.Plug.Classroom.Scene
 
         public IList<ExaminationQuestion> ExaminationQuestion { get; set; }
 
+        public IList<RegionScene> RegionScenes { get; set; }
+
         public Examination Convert()
         {
             Examination examination = new Examination();

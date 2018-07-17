@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TecheartSln.Plug.Classroom.Scene;
 
 namespace TecheartSln.Plug.Classroom.Domain.Utils
 {
@@ -50,17 +51,20 @@ namespace TecheartSln.Plug.Classroom.Domain.Utils
         /// <param name="workbook"></param>
         /// <param name="voters"></param>
         /// <param name="scores"></param>
-        public static void MakeStudentDistribution(Workbook workbook, IList<Voter> voters,IList<int> scores)
+        public static void MakeStudentDistribution(Workbook workbook, IList<Voter> voters,IList<RegionScene> scoreScenes)
         {
+            scoreScenes = scoreScenes.OrderByDescending(k => k.Score).ToList();
             workbook.Worksheets.Add();
             Worksheet sheet = workbook.Worksheets[workbook.Worksheets.Count() - 1];
             sheet.Cells["A1"].PutValue("成绩");
             sheet.Cells["B1"].PutValue("总数量");
             int row = 1;
-            foreach (var v in scores)
+            int lastTimeScore = Int32.MaxValue;
+            foreach (var v in scoreScenes)
             {
-                sheet.Cells[row, 0].PutValue(v+"分以上");
-                sheet.Cells[row, 1].PutValue(voters.Count(k => k.Score >= v));
+                sheet.Cells[row, 0].PutValue(v.ScoreExplain);
+                sheet.Cells[row, 1].PutValue(voters.Count(k => k.Score >= v.Score && k.Score< lastTimeScore));
+                lastTimeScore = v.Score;
                 row += 1;
             }
             sheet.Name = "统计图";
@@ -72,8 +76,8 @@ namespace TecheartSln.Plug.Classroom.Domain.Utils
             chart.Title.Font.IsBold = true;
             chart.Title.Font.Size = 12;
 
-            chart.NSeries.Add(sheet.Name + "!" + "B2" + ":" + "B" + (scores.Count + 1), true);
-            chart.NSeries.CategoryData = sheet.Name + "!A2:A"+ (scores.Count + 1);
+            chart.NSeries.Add(sheet.Name + "!" + "B2" + ":" + "B" + (scoreScenes.Count + 1), true);
+            chart.NSeries.CategoryData = sheet.Name + "!A2:A"+ (scoreScenes.Count + 1);
         }
     }
 }

@@ -42,19 +42,28 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
             var response=javaScriptSerializer.Deserialize<SimpleExaminationScene>(json);
             examination = response.Convert();
-            foreach (var v in examination.ExaminationQuestions)
+            if (examination.ExaminationQuestions != null)
+                foreach (var v in examination.ExaminationQuestions)
+                {
+                    QuestionVM vm = new QuestionVM();
+                    vm.Set(v);
+                    QuestionList.Add(vm);
+                    TotalScore += v.Score;
+                }
+            if (examination.Voters != null)
+                foreach (var v in examination.Voters)
+                {
+                    StudentVM studentNM = new StudentVM();
+                    studentNM.Set(v);
+                    StudentList.Add(studentNM);
+                }
+            if (response.RegionScenes != null)
             {
-                QuestionVM vm = new QuestionVM();
-                vm.Set(v);
-                QuestionList.Add(vm);
-                TotalScore += v.Score;
-            }
-
-            foreach(var v in examination.Voters)
-            {
-                StudentVM studentNM = new StudentVM();
-                studentNM.Set(v);
-                StudentList.Add(studentNM);
+                RegionList.Clear();
+                foreach (var v in response.RegionScenes)
+                {
+                    RegionList.Add(v.convert());
+                }
             }
         }
 
@@ -143,7 +152,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
         #endregion
 
         #region 成绩范围
-        private ObservableCollection<RegionVM> _regionList = new ObservableCollection<RegionVM>() { new RegionVM() { Score=0, ScoreExplain="" } };
+        private ObservableCollection<RegionVM> _regionList = new ObservableCollection<RegionVM>() { new RegionVM() { Score=90, ScoreExplain="优秀" },new RegionVM() { Score = 75, ScoreExplain = "良好" }, new RegionVM() { Score = 60, ScoreExplain = "及格" }, new RegionVM() { Score = 0, ScoreExplain = "不及格" } };
         public ObservableCollection<RegionVM> RegionList
         {
             get { return _regionList; }
@@ -206,6 +215,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                             TypeIdentity = TemplateGuid(),
                             VoterScene = new List<VoterScene>(),
                             ExaminationQuestion = examination.ExaminationQuestions,
+                            RegionScenes = new List<RegionScene>(),
                         };
                         if(examination==null || examination.Voters == null)
                         {
@@ -221,6 +231,10 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                             {
                                 simpleExaminationScene.VoterScene.Add(new VoterScene() { VoterId=v.VoterId, Select=k.Value, QuestionNumber=k.Key, MappingNumber=v.VoterMappingNumber, Name=v.VoterName });
                             }
+                        }
+                        foreach(var v in RegionList)
+                        {
+                            simpleExaminationScene.RegionScenes.Add(v.convert());
                         }
                         base.SaveFile(simpleExaminationScene);
                         ProcessList += "->已保存";
@@ -336,7 +350,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                                 Workbook workbook = new Workbook();
                                 workbook.Worksheets.Clear();
                                 ExaminationAnalysisUtils.MakeStudentScore(workbook, examination.Voters);
-                                ExaminationAnalysisUtils.MakeStudentDistribution(workbook, examination.Voters, new List<int>() { 90, 60, 0 });
+                                ExaminationAnalysisUtils.MakeStudentDistribution(workbook, examination.Voters, _regionList.Select(k => k.convert()).ToList());
                                 workbook.Save(path, SaveFormat.Xlsx);
                                 ProcessList += "->已导出到Excel";
                             }
@@ -415,200 +429,5 @@ namespace TecheartSln.Plug.Classroom.ViewModel
             }
         }
     }
-    public class StudentVM: ViewModelBase
-    {
-        /// <summary>
-        /// 学生编号
-        /// </summary>
-        private String _studentNumber = "";
-        public String StudentNumber
-        {
-            get { return _studentNumber; }
-            set
-            {
-                _studentNumber = value;
-                RaisePropertyChanged("StudentNumber");
 
-            }
-        }
-
-        /// <summary>
-        /// 总得分
-        /// </summary>
-        private string _score = "";
-        public String Score
-        {
-            get { return _score; }
-            set
-            {
-                _score = value;
-                RaisePropertyChanged("Score");
-
-            }
-        }
-
-        /// <summary>
-        /// 总答题数
-        /// </summary>
-        public string _count = "0";
-        public String Count
-        {
-            get { return _count; }
-            set
-            {
-                _count = value;
-                RaisePropertyChanged("Count");
-
-            }
-        }
-
-        /// <summary>
-        /// 总答题数
-        /// </summary>
-        public string _mappingNumber = "0";
-        public String MappingNumber
-        {
-            get { return _mappingNumber; }
-            set
-            {
-                _mappingNumber = value;
-                RaisePropertyChanged("MappingNumber");
-
-            }
-        }
-
-        /// <summary>
-        /// 总答题数
-        /// </summary>
-        public string _name = "";
-        public String Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                RaisePropertyChanged("Name");
-
-            }
-        }
-
-        /// <summary>
-        /// 是否登陆
-        /// </summary>
-        public bool _isLogin = false;
-        public bool IsLogin
-        {
-            get { return _isLogin; }
-            set
-            {
-                _isLogin = value;
-                RaisePropertyChanged("IsLogin");
-
-            }
-        }
-
-        public void Set(Voter  voter)
-        {
-            StudentNumber = voter.VoterId;
-            Score = voter.Score.ToString();
-            Count = voter.Count.ToString();
-            MappingNumber = voter.VoterMappingNumber;
-            Name = voter.VoterName;
-        }
-    }
-    public class QuestionVM: ViewModelBase
-    {
-        /// <summary>
-        /// 题目编号
-        /// </summary>
-        private String _questionNumber = "";
-        public String QuestionNumber
-        {
-            get { return _questionNumber; }
-            set
-            {
-                _questionNumber = value;
-                RaisePropertyChanged("QuestionNumber");
-                 
-            }
-        }
-        /// <summary>
-        /// 答案和分数
-        /// </summary>
-        private String _answerAndScore = "";
-        public String AnswerAndScore
-        {
-            get { return _answerAndScore; }
-            set
-            {
-                _answerAndScore = value;
-                RaisePropertyChanged("AnswerAndScore");
-
-            }
-        }
-
-
-        /// <summary>
-        /// 答题分布统计
-        /// </summary>
-        private String _statistics = "";
-        public String Statistics
-        {
-            get { return _statistics; }
-            set
-            {
-                _statistics = value;
-                RaisePropertyChanged("Statistics");
-
-            }
-        }
-        
-        public void Set(ExaminationQuestion examinationQuestion)
-        {
-            
-            QuestionNumber = examinationQuestion.QuestionNumber.ToString();
-            AnswerAndScore = "答案是："+String.Join("|", examinationQuestion.Answer) +" ，分数是："+ examinationQuestion.Score;//"答案是 A ，分数是 4";
-            StringBuilder sb = new StringBuilder();
-            foreach(var v in examinationQuestion.Statistics)
-            {
-                
-                sb.Append(v.Key);
-                sb.Append("/");
-                sb.Append(v.Value);
-                sb.Append(",  ");
-            }
-            Statistics = sb.ToString();
-        }
-    }
-
-    public class RegionVM : ViewModelBase
-    {
-        private int _score;
-        /// <summary>
-        /// 分数
-        /// </summary>
-        public int Score {
-            get { return _score; }
-            set
-            {
-                _score = value;
-                RaisePropertyChanged("Score");
-
-            }
-        }
-
-        private String _scoreExplain = "";
-        /// <summary>
-        /// 对于分数的说明
-        /// </summary>
-        public String ScoreExplain {
-            get { return _scoreExplain; }
-            set
-            {
-                _scoreExplain = value;
-                RaisePropertyChanged("ScoreExplain");
-
-            }
-        }
-    }
 }
