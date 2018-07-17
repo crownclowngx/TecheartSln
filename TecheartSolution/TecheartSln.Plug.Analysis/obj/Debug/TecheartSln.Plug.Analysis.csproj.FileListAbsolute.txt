@@ -1,0 +1,11 @@
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Analysis.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\plug\TecheartSln.Plug.Analysis.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis.csprojResolveAssemblyReference.cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis_MarkupCompile.cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis_MarkupCompile.lref
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\FoundationDataTemplate.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\FoundationStyle.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis.g.resources
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis.csproj.CoreCompileInputs.cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis.dll
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Analysis\obj\Debug\TecheartSln.Plug.Analysis.pdb

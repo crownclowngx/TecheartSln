@@ -77,8 +77,10 @@
             <StackPanel>
                 <TextBlock Text="{Binding Path=ProcessList}"/>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox Content="开始考试" IsChecked="{Binding Path=Start, Mode=TwoWay}"/>
-                    <CheckBox Content="不欢迎外来者" IsChecked="{Binding Path=RefuseOutOfStudentList, Mode=TwoWay}"/>
+                    <Border>
+                        <CheckBox Content="开始考试" IsChecked="{Binding Start, Mode=TwoWay}" Height="15.098" Width="67.975"/>
+                    </Border>
+                    <CheckBox Content="不欢迎外来者" IsChecked="{Binding RefuseOutOfStudentList, Mode=TwoWay}"/>
                 </StackPanel>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -88,7 +90,7 @@
                     </Grid.ColumnDefinitions>
                     <Button Content="保存考试" Command="{Binding Path=SaveCommand}" Grid.Column="0"/>
                     <Button Content="分析考试(Excel)" Command="{Binding Path=AnalysisCommand}" Grid.Column="2" IsEnabled="{Binding Path=CanAnalysis}"/>
-                    
+
                 </Grid>
                 <Grid>
                     <DataGrid  Margin="0 8 0 0" ItemsSource="{Binding Path=RegionList}" MaxHeight="400" CanUserDeleteRows="True"  CanUserSortColumns="True" CanUserAddRows="True" MinWidth="300" materialDesign:DataGridAssist.CellPadding="4 2 2 2" materialDesign:DataGridAssist.ColumnHeaderPadding="4 2 2 2" AutoGenerateColumns="False">
@@ -112,9 +114,9 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
-                
+
             </StackPanel>
         </ScrollViewer>
     </Grid>
-    
+
 </UserControl>

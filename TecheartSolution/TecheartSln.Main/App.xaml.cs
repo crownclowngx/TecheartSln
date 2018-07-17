@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace TecheartSln.Main
 {
@@ -19,6 +20,7 @@ namespace TecheartSln.Main
         public App()
         {
             this.Startup += new StartupEventHandler(App_Startup);
+            
         }
 
         void App_Startup(object sender, StartupEventArgs e)
@@ -28,6 +30,17 @@ namespace TecheartSln.Main
 
             AppDomainSetup ads = new AppDomainSetup();
             ads.PrivateBinPath = path + @"\Libs";
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            this.DispatcherUnhandledException += new DispatcherUnhandledExceptionEventHandler(App_DispatcherUnhandledException);
+        }
+
+        void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

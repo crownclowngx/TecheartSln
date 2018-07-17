@@ -341,8 +341,10 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                 {
                     _analysisCommand = new RelayCommand(p =>
                     {
+                        //throw new Exception("这是一个测试一场");
                         try
                         {
+                            
                             var dialog = new SaveFileDialog() { Filter = "2007以及之后Excel|*.xlsx", FileName = Title.Replace("*", "") + "成绩导出" };
                             if (dialog.ShowDialog() == true)
                             {
@@ -359,6 +361,7 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                         {
                             MessageBox.Show("Excel处于打开状态，请关闭Excel文件");
                         }
+                        
                     }, p => true);
                 }
                 return _analysisCommand;

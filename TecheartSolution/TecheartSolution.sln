@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Plug.Classroom"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Control.Library", "TecheartSln.Control.Library\TecheartSln.Control.Library.csproj", "{A758F508-8337-4A94-BA96-01A81F77BDA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecheartSln.Plug.Analysis", "TecheartSln.Plug.Analysis\TecheartSln.Plug.Analysis.csproj", "{00D1B7B4-1DAF-4927-9769-A630F013CD6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{A758F508-8337-4A94-BA96-01A81F77BDA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A758F508-8337-4A94-BA96-01A81F77BDA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A758F508-8337-4A94-BA96-01A81F77BDA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D1B7B4-1DAF-4927-9769-A630F013CD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D1B7B4-1DAF-4927-9769-A630F013CD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D1B7B4-1DAF-4927-9769-A630F013CD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D1B7B4-1DAF-4927-9769-A630F013CD6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
