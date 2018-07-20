@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TecheartSln.Plug.Classroom.Scene
+namespace TecheartSln.Plug.Analysis.Domain.Boundary.Examination
 {
-    public class VoterScene
+    public class Voter
     {
         /// <summary>
         /// 学生编号（投票器编号）

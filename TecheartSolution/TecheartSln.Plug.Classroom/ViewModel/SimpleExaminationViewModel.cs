@@ -229,7 +229,12 @@ namespace TecheartSln.Plug.Classroom.ViewModel
                             }
                             foreach(var k in v.Statistics)
                             {
-                                simpleExaminationScene.VoterScene.Add(new VoterScene() { VoterId=v.VoterId, Select=k.Value, QuestionNumber=k.Key, MappingNumber=v.VoterMappingNumber, Name=v.VoterName });
+                                Boolean right = false;
+                                if (v.StatisticsAnswer!=null && v.StatisticsAnswer.ContainsKey(k.Key))
+                                {
+                                    right= v.StatisticsAnswer[k.Key] > 0; 
+                                }
+                                simpleExaminationScene.VoterScene.Add(new VoterScene() { VoterId=v.VoterId, Select=k.Value, QuestionNumber=k.Key, MappingNumber=v.VoterMappingNumber, Name=v.VoterName, SelectIsRight= right });
                             }
                         }
                         foreach(var v in RegionList)
