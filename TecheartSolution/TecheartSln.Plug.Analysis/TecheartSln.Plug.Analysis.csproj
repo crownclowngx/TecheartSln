@@ -72,6 +72,7 @@
     <Compile Include="Domain\Boundary\Examination\Question.cs" />
     <Compile Include="Domain\Boundary\Examination\SimpleExamination.cs" />
     <Compile Include="Domain\Boundary\Examination\Voter.cs" />
+    <Compile Include="Domain\ExaminationAnalysis.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AnalysisExaminationViewModel.cs" />
@@ -84,6 +85,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Domain\Analysis\" />
     <Folder Include="Scene\" />
     <Folder Include="View\" />
   </ItemGroup>
