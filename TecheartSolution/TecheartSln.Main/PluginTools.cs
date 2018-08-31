@@ -78,6 +78,10 @@ namespace TecheartSln.Main
                     if (dlltype.BaseType == typeof(TemplateBaseViewModel))
                     {
                         MethodInfo methodDesc = dlltype.GetMethod("TemplateGuid");
+                        if (methodDesc == null)
+                        {
+                            continue;
+                        }
                         TemplateViewModelInit templateViewModelInit = new TemplateViewModelInit() { TemplateType = dlltype, Identifier = methodDesc.Invoke(null, null).ToString() };
                         initResponse.TemplateBaseViewModels.Add(templateViewModelInit);
                     }
