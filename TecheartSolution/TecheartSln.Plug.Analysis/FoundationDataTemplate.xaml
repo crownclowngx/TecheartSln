@@ -6,5 +6,7 @@
              xmlns:local="clr-namespace:TecheartSln.Plug.Analysis"
              xmlns:localview="clr-namespace:TecheartSln.Plug.Analysis.View"
              mc:Ignorable="d" >
-
+    <DataTemplate x:Key="LoginViewTemplate">
+        <localview:LoginView />
+    </DataTemplate>
 </ResourceDictionary>

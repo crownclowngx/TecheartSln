@@ -73,9 +73,11 @@
     <Compile Include="Message\RelationProvider\MessageSubscribeRelations.cs" />
     <Compile Include="Message\RelationProvider\Relation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource\CommonResource.cs" />
     <Compile Include="Resource\ResourceLocator.cs" />
     <Compile Include="Scene\BaseScene.cs" />
     <Compile Include="Utils\FileGet.cs" />
+    <Compile Include="Utils\HttpUtils.cs" />
     <Compile Include="Utils\JsonUtils.cs" />
     <Compile Include="Utils\OpenFileUtils.cs" />
     <Compile Include="ViewModel\Base\PaneViewModel.cs" />

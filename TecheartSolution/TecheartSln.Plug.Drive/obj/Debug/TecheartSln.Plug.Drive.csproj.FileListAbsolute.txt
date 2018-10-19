@@ -102,3 +102,7 @@ E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSl
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csproj.CoreCompileInputs.cache
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.dll
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\LoginView.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\LoginView.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\SearchView.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\SearchView.baml

@@ -43,17 +43,18 @@
                                 </Expander>
                                 <Grid Margin="0,0,0,0">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="1*" />
-                                        <ColumnDefinition Width="3*" />
+                                        <ColumnDefinition Width="54*" />
+                                        <ColumnDefinition Width="43*" />
+                                        <ColumnDefinition Width="119*"/>
                                     </Grid.ColumnDefinitions>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="1*" />
                                         <RowDefinition Height="1*" />
                                     </Grid.RowDefinitions>
                                     <Label Grid.Column="0" Grid.Row="0" Content="信道"></Label>
-                                    <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SelChannelList}" SelectedIndex="1"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                    <ComboBox Grid.Column="1" Grid.Row="0" ItemsSource="{Binding SelChannelList}" SelectedIndex="1"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Channel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>
                                     <Label Grid.Column="0" Grid.Row="1" Content="频率"></Label>
-                                    <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelFrequencyList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Frequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></ComboBox>
+                                    <ComboBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding SelFrequencyList}" SelectedIndex="0"  SelectedValuePath="Key" DisplayMemberPath="Value" SelectedValue="{Binding Frequency,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2"></ComboBox>
                                 </Grid>
                                 <Button Content="提交基础配置" Command="{Binding Path=SetBaseConfigfCommand}" />
                             </StackPanel>

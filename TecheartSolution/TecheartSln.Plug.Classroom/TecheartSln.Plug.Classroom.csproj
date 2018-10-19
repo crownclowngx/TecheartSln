@@ -81,6 +81,10 @@
     <Compile Include="Domain\Boundary\StudentSet.cs" />
     <Compile Include="Domain\Examination.cs" />
     <Compile Include="Domain\ExaminationQuestion.cs" />
+    <Compile Include="Domain\Response\BaseResponse.cs" />
+    <Compile Include="Domain\Response\CommonResponse.cs" />
+    <Compile Include="Domain\Response\User.cs" />
+    <Compile Include="Domain\Response\UserResponse.cs" />
     <Compile Include="Domain\Utils\ExaminationAnalysisUtils.cs" />
     <Compile Include="Domain\Utils\StringUtils.cs" />
     <Compile Include="Domain\Voter.cs" />

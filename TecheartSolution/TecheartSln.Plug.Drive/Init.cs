@@ -20,7 +20,7 @@ namespace TecheartSln.Plug.Drive
     {
         public IList<ToolViewModel> GetToolViewModel()
         {
-            return new List<ToolViewModel>() { new RelationListViewModel() { IsVisible = false },new ProducerMonitorViewModel() { IsVisible = false }, new TecheartHostViewModel() { IsVisible = false } };
+            return new List<ToolViewModel>() { new RelationListViewModel() { IsVisible = false }, new ProducerMonitorViewModel() { IsVisible = false } ,new LoginViewModel() { IsVisible = true } };
         }
 
         public void RedisterStyles(PanesStyleSelectorDynamic selectPanesStyle)
@@ -43,12 +43,26 @@ namespace TecheartSln.Plug.Drive
 
             paneSel.RegisterDataTemplate(typeof(ProducerMonitorViewModel), template3);
 
-            var template4 = ResourceLocator.GetResource<DataTemplate>(
-                                    Assembly.GetAssembly(typeof(TecheartHostViewModel)).GetName().Name,
-                                    "FoundationDataTemplate.xaml",
-                                    "TecheartHostViewTemplate") as DataTemplate;
+            //var template4 = ResourceLocator.GetResource<DataTemplate>(
+            //                        Assembly.GetAssembly(typeof(TecheartHostViewModel)).GetName().Name,
+            //                        "FoundationDataTemplate.xaml",
+            //                        "TecheartHostViewTemplate") as DataTemplate;
 
-            paneSel.RegisterDataTemplate(typeof(TecheartHostViewModel), template4);
+            //paneSel.RegisterDataTemplate(typeof(TecheartHostViewModel), template4);
+
+            var template5 = ResourceLocator.GetResource<DataTemplate>(
+                                 Assembly.GetAssembly(typeof(LoginViewModel)).GetName().Name,
+                                 "FoundationDataTemplate.xaml",
+                                 "LoginViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(LoginViewModel), template5);
+
+            var template6 = ResourceLocator.GetResource<DataTemplate>(
+                       Assembly.GetAssembly(typeof(SearchViewModel)).GetName().Name,
+                       "FoundationDataTemplate.xaml",
+                       "TecheartSlnPlugSearchViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(SearchViewModel), template6);
 
         }
     }

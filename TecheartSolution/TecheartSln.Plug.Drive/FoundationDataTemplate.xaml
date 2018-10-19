@@ -6,7 +6,10 @@
              xmlns:local="clr-namespace:TecheartSln.Plug.Drive"
              xmlns:localview="clr-namespace:TecheartSln.Plug.Drive.View"
              mc:Ignorable="d" >
-
+    <DataTemplate x:Key="LoginViewTemplate">
+        <localview:LoginView />
+    </DataTemplate>
+    
     <DataTemplate x:Key="RelationListViewTemplate">
         <localview:RelationListView />
     </DataTemplate>
@@ -18,4 +21,8 @@
     <DataTemplate x:Key="TecheartHostViewTemplate">
         <localview:TecheartHostView />
     </DataTemplate>
+    <DataTemplate x:Key="TecheartSlnPlugSearchViewTemplate">
+        <localview:SearchView />
+    </DataTemplate>
+
 </ResourceDictionary>

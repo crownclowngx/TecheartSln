@@ -83,4 +83,3 @@ E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Core.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Core.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\Libs\TecheartSln.Core.pdb
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Core\obj\Debug\TecheartSln.Core.csprojResolveAssemblyReference.cache

@@ -35,6 +35,5 @@ D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\bin\Debug\Microsoft.
 D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\bin\Debug\TecheartVote.pdb
 D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\obj\Debug\PlugUnitTest.csprojResolveAssemblyReference.cache
 D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\obj\Debug\PlugUnitTest.csproj.CoreCompileInputs.cache
-D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\obj\Debug\PlugUnitTest.csproj.CopyComplete
 D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\obj\Debug\PlugUnitTest.dll
 D:\Project\github\TecheartSln\TecheartSolution\PlugUnitTest\obj\Debug\PlugUnitTest.pdb

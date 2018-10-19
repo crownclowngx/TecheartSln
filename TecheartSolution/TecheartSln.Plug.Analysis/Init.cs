@@ -20,7 +20,7 @@ namespace TecheartSln.Plug.Analysis
     {
         public IList<ToolViewModel> GetToolViewModel()
         {
-            return new List<ToolViewModel>() { };
+            return new List<ToolViewModel>() { new LoginViewModel() { IsVisible = false } };
         }
 
         public void RedisterStyles(PanesStyleSelectorDynamic selectPanesStyle)
@@ -29,6 +29,12 @@ namespace TecheartSln.Plug.Analysis
 
         public void RegisterDataTemplates(PanesTemplateSelectorDynamic paneSel)
         {
+            var template2 = ResourceLocator.GetResource<DataTemplate>(
+                                   Assembly.GetAssembly(typeof(LoginViewModel)).GetName().Name,
+                                   "FoundationDataTemplate.xaml",
+                                   "LoginViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(LoginViewModel), template2);
         }
     }
 }

@@ -32,7 +32,6 @@ F:\proj\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\ToolsList.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartSln.Main.exe.config
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartSln.Main.exe
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\bin\Debug\TecheartSln.Main.pdb
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csprojResolveAssemblyReference.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\MainWindow.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\Utils\ToolsList.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\App.g.cs
@@ -91,3 +90,4 @@ E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CoreCompileInputs.cache
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.exe
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.pdb
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csprojResolveAssemblyReference.cache
