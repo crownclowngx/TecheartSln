@@ -31,7 +31,7 @@ namespace TecheartSln.Plug.Drive.Domain.Response
         /// <summary>
         /// 父节点id 该用户的上层节点id 最终跟节点 编号 0
         /// </summary>
-        public int FatherId { get; set; }
+        public long FatherId { get; set; }
 
         /// <summary>
         /// 明文的密码，在注册时候使用其他时候该字段无定义

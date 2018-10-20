@@ -90,4 +90,4 @@ E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csproj.CoreCompileInputs.cache
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.exe
 E:\Code\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.pdb
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csprojResolveAssemblyReference.cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Main\obj\Debug\TecheartSln.Main.csprojAssemblyReference.cache

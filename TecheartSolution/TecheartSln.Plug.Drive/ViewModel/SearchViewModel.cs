@@ -24,10 +24,14 @@ namespace TecheartSln.Plug.Drive.ViewModel
     {
         public SearchViewModel(string title) : base(title)
         {
-            if (CommonResource.GetValue("User") != null)
+            if (CommonResource.GetValue("User") == null)
             {
                 RefusePeople = false;
+                MessageBox.Show("未登录所以不能打开该页面");
+                CloseThis();
+                return;
             }
+            
             var user = JsonUtils.Deserialize<User>(CommonResource.GetValue("User"));
             var responsestr = HttpUtils.PostJson("http://39.107.99.199:30000/api/User/GetSubUsersNew", new { UserIds = new List<long>() { user.UserId }, PageNumber=1, PageCount=10000, });
             var response = JsonUtils.Deserialize<BaseResponse<GetUsersNewResponse>>(responsestr);
@@ -133,6 +137,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
                         dic.Add(v.UserInfoUserId, v.UserInfoUserName);
                     }
                     StarManagerList = dic;
+                    StarManager = 0;
                 }
                 RaisePropertyChanged("OperationManager");
             }
@@ -155,6 +160,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
                         dic.Add(v.UserInfoUserId, v.UserInfoUserName);
                     }
                     StarList = dic;
+                    Star = 0;
                 }
                
                 RaisePropertyChanged("StarManager");
@@ -200,16 +206,21 @@ namespace TecheartSln.Plug.Drive.ViewModel
             {
                 if (_closeCommand == null)
                 {
-                    _closeCommand = new RelayCommand((p) => 
+                    _closeCommand = new RelayCommand((p) =>
                     {
-                        JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
-                        MessageDeliverGroup.Delivery(MessageType.CloseTempleteEvemt, javaScriptSerializer.Serialize(new CloseTempleteRequest() { TempleteGuid = this.StrGuid }));
-                        MessageSubscribeRelations.DeleteSubscribe(MessageType.WSDEDataEvent, this.StrGuid);
+                        CloseThis();
                     }, (p) => true);
                 }
 
                 return _closeCommand;
             }
+        }
+
+        private void CloseThis()
+        {
+            JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+            MessageDeliverGroup.Delivery(MessageType.CloseTempleteEvemt, javaScriptSerializer.Serialize(new CloseTempleteRequest() { TempleteGuid = this.StrGuid }));
+            MessageSubscribeRelations.DeleteSubscribe(MessageType.WSDEDataEvent, this.StrGuid);
         }
 
         RelayCommand _saveCommand = null;

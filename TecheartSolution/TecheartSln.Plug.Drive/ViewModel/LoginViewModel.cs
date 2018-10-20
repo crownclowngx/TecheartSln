@@ -28,7 +28,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
         /// <summary>
         /// 登录名
         /// </summary>
-        private String _loginName = String.Empty;
+        private String _loginName = "总经理";
 
         public String LoginName
         {

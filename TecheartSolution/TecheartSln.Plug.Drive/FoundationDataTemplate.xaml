@@ -24,5 +24,7 @@
     <DataTemplate x:Key="TecheartSlnPlugSearchViewTemplate">
         <localview:SearchView />
     </DataTemplate>
-
+    <DataTemplate x:Key="TecheartSlnPlugAddUserViewTemplate">
+        <localview:AddUserView />
+    </DataTemplate>
 </ResourceDictionary>

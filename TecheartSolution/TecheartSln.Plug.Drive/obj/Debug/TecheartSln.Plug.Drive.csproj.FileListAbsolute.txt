@@ -60,7 +60,6 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\Tec
 D:\Code\NewGit\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.pdb
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\bin\Debug\TecheartSln.Plug.Drive.dll
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\bin\Debug\TecheartSln.Plug.Drive.pdb
-D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csprojResolveAssemblyReference.cache
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\ProducerMonitorView.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\RelationListView.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -106,3 +105,6 @@ D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\LoginView.baml
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\SearchView.g.cs
 D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\SearchView.baml
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\TecheartSln.Plug.Drive.csprojAssemblyReference.cache
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\AddUserView.g.cs
+D:\Project\github\TecheartSln\TecheartSolution\TecheartSln.Plug.Drive\obj\Debug\View\AddUserView.baml

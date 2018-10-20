@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-71208023912
+8-523099149
 
-21844803584
+27-2060458355
 19-1201657354
-FoundationDataTemplate.xaml;FoundationStyle.xaml;View\LoginView.xaml;View\ProducerMonitorView.xaml;View\RelationListView.xaml;View\SearchView.xaml;View\TecheartHostView.xaml;
+FoundationDataTemplate.xaml;FoundationStyle.xaml;View\AddUserView.xaml;View\LoginView.xaml;View\ProducerMonitorView.xaml;View\RelationListView.xaml;View\SearchView.xaml;View\TecheartHostView.xaml;
 
-False
+True
 

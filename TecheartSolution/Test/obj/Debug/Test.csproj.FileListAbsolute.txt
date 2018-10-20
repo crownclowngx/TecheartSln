@@ -17,7 +17,6 @@ D:\Code\NewGit\TecheartSln\TecheartSolution\Test\bin\Debug\Test.pdb
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
 D:\Code\NewGit\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb
-D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 D:\Project\github\TecheartSln\TecheartSolution\Test\bin\Debug\Aspose.Cells.dll
 E:\Code\TecheartSln\TecheartSolution\Test\bin\Debug\Test.exe.config
 E:\Code\TecheartSln\TecheartSolution\Test\bin\Debug\Test.exe
@@ -27,3 +26,5 @@ E:\Code\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojResolveAssemblyRe
 E:\Code\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 E:\Code\TecheartSln\TecheartSolution\Test\obj\Debug\Test.exe
 E:\Code\TecheartSln\TecheartSolution\Test\obj\Debug\Test.pdb
+D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\Project\github\TecheartSln\TecheartSolution\Test\obj\Debug\Test.csproj.CopyComplete

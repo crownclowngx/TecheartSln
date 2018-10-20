@@ -64,6 +64,13 @@ namespace TecheartSln.Plug.Drive
 
             paneSel.RegisterDataTemplate(typeof(SearchViewModel), template6);
 
+            var template7 = ResourceLocator.GetResource<DataTemplate>(
+           Assembly.GetAssembly(typeof(AddUserViewModel)).GetName().Name,
+           "FoundationDataTemplate.xaml",
+           "TecheartSlnPlugAddUserViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(AddUserViewModel), template7);
+
         }
     }
 }
