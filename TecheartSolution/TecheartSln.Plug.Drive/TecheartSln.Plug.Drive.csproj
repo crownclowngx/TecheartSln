@@ -70,6 +70,7 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\ProducerMonitorViewModel.cs" />
     <Compile Include="ViewModel\RelationListViewModel.cs" />
+    <Compile Include="ViewModel\SearchUserViewModel.cs" />
     <Compile Include="ViewModel\SearchViewModel.cs" />
     <Compile Include="ViewModel\TecheartHostViewModel.cs" />
     <Compile Include="View\AddUserView.xaml.cs">
@@ -83,6 +84,9 @@
     </Compile>
     <Compile Include="View\RelationListView.xaml.cs">
       <DependentUpon>RelationListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchUserView.xaml.cs">
+      <DependentUpon>SearchUserView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SearchView.xaml.cs">
       <DependentUpon>SearchView.xaml</DependentUpon>
@@ -121,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RelationListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

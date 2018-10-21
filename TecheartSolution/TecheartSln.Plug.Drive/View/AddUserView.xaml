@@ -30,12 +30,12 @@
                                 <TextBox HorizontalAlignment="Left" Height="23" Margin="483,12,0,0" TextWrapping="Wrap" Text="{Binding Path=InputSearch,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
                             </Grid>
                             <ScrollViewer HorizontalScrollBarVisibility="Auto" >
-                                <DataGrid ItemsSource="{Binding QuesionList}" CanUserSortColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" MaxHeight="260" VerticalAlignment="Bottom" AutoGenerateColumns="False" >
+                                <DataGrid ItemsSource="{Binding QuesionList}" CanUserSortColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" MaxHeight="260" VerticalAlignment="Bottom" AutoGenerateColumns="False" IsReadOnly="True">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Binding="{Binding UserInfoUserId}" Header="用戶id" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" IsReadOnly="True"/>
+                                        <DataGridTextColumn Binding="{Binding UserInfoUserId}" Header="用戶id" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  />
                                         <DataGridTextColumn Binding="{Binding UserInfoUserName}" Header="用户姓名" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                                         <DataGridTextColumn Binding="{Binding UserInfoExtend}" Header="备注" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
-                                        <DataGridTextColumn Binding="{Binding UserInfoUserTypeStr}" Header="用户类型" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" IsReadOnly="True"/>
+                                        <DataGridTextColumn Binding="{Binding UserInfoUserTypeStr}" Header="用户类型" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"  />
                                     </DataGrid.Columns>
                                 </DataGrid>
                             </ScrollViewer>

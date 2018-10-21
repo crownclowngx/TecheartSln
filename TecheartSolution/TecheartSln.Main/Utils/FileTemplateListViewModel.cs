@@ -48,6 +48,7 @@ namespace TecheartSln.Main.Utils
             set
             {
                 p_SelectedItem = value;
+                FileName = value.FileName;
                 RaisePropertyChanged("SelectedItem");
             }
         }

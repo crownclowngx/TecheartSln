@@ -394,8 +394,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
 
                             }
                         }
-                        //ClearSelect();
-                        ClearInput();
+                        //ClearInput();
                     }, (p) => true);
                 }
 

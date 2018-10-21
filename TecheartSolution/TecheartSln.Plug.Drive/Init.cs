@@ -20,7 +20,7 @@ namespace TecheartSln.Plug.Drive
     {
         public IList<ToolViewModel> GetToolViewModel()
         {
-            return new List<ToolViewModel>() { new RelationListViewModel() { IsVisible = false }, new ProducerMonitorViewModel() { IsVisible = false } ,new LoginViewModel() { IsVisible = true } };
+            return new List<ToolViewModel>() { new RelationListViewModel() { IsVisible = false }, new ProducerMonitorViewModel() { IsVisible = false }, new LoginViewModel() { IsVisible = true } };
         }
 
         public void RedisterStyles(PanesStyleSelectorDynamic selectPanesStyle)
@@ -65,11 +65,20 @@ namespace TecheartSln.Plug.Drive
             paneSel.RegisterDataTemplate(typeof(SearchViewModel), template6);
 
             var template7 = ResourceLocator.GetResource<DataTemplate>(
-           Assembly.GetAssembly(typeof(AddUserViewModel)).GetName().Name,
-           "FoundationDataTemplate.xaml",
-           "TecheartSlnPlugAddUserViewTemplate") as DataTemplate;
+                        Assembly.GetAssembly(typeof(AddUserViewModel)).GetName().Name,
+                        "FoundationDataTemplate.xaml",
+                        "TecheartSlnPlugAddUserViewTemplate") as DataTemplate;
 
             paneSel.RegisterDataTemplate(typeof(AddUserViewModel), template7);
+
+
+            var template8 = ResourceLocator.GetResource<DataTemplate>(
+                    Assembly.GetAssembly(typeof(SearchUserViewModel)).GetName().Name,
+                    "FoundationDataTemplate.xaml",
+                    "TecheartSlnPlugSearchUserViewTemplate") as DataTemplate;
+
+            paneSel.RegisterDataTemplate(typeof(SearchUserViewModel), template8);
+ 
 
         }
     }

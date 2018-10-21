@@ -21,7 +21,7 @@
                 <Button Content="查询" HorizontalAlignment="Left" Margin="335,41,0,0" VerticalAlignment="Top" Width="370" Command="{Binding SearchArrangementCommand}"/>
             </Grid>
             <ScrollViewer HorizontalScrollBarVisibility="Auto" >
-                <DataGrid ItemsSource="{Binding QuesionList}" CanUserSortColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="True" MaxHeight="400" VerticalAlignment="Bottom" AutoGenerateColumns="False">
+                <DataGrid ItemsSource="{Binding QuesionList}" CanUserSortColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="True" MaxHeight="400" VerticalAlignment="Bottom" AutoGenerateColumns="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding UserInfoUserId}" Header="用戶id" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding UserInfoUserName}" Header="用户姓名" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>

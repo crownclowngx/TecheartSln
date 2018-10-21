@@ -68,6 +68,21 @@ namespace TecheartSln.Plug.Drive.Scene
             var response = JsonUtils.Deserialize<BaseResponse<UserResponse>>(responsestr);
             return response;
         }
+
+        /// <summary>
+        /// 获取当前用户下所选择的用户类型的所有用户
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <param name="pangNumber"></param>
+        /// <param name="pageCount"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        public static BaseResponse<GetUsersNewResponse> GetAnyUserByFilter(long userid,int pangNumber,int pageCount,int userType)
+        {
+            var responsestr = HttpUtils.PostJson("http://39.107.99.199:30000/api/User/GetAnyUserByFilter", new { UserIds = new List<long>() { userid }, PageNumber = 1, PageCount = 10000, UserType = userType });
+            var response = JsonUtils.Deserialize<BaseResponse<GetUsersNewResponse>>(responsestr);
+            return response;
+        }
         /// <summary>
         /// 根据usertype获取他下面的字usertype
         /// </summary>
