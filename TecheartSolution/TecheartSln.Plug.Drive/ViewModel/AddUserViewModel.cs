@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,7 +44,20 @@ namespace TecheartSln.Plug.Drive.ViewModel
         {
 
         }
-        //DivisionTypeList  AnchorProportionList
+        private IList<UserDetailNew> _AllQuesionList = new List<UserDetailNew>();
+        /// <summary>
+        /// 绑定的数据集合
+        /// </summary>
+        private ObservableCollection<UserDetailNew> _quesionList = new ObservableCollection<UserDetailNew>();
+        public ObservableCollection<UserDetailNew> QuesionList
+        {
+            get { return _quesionList; }
+            set
+            {
+                _quesionList = value;
+                RaisePropertyChanged("QuesionList");
+            }
+        }
         /// <summary>
         /// 艺人类型
         /// </summary>
@@ -125,6 +139,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
                     StarManager = 0;
                     MinUser = GetMinSelectUser();
                     UserSubType = ZhiBoUtils.GetUserSubTypeByUserType(MinUser.UserType);
+                    SetSearchValue(response.Data.UserInfos);
                 }
                 RaisePropertyChanged("OperationManager");
             }
@@ -151,6 +166,7 @@ namespace TecheartSln.Plug.Drive.ViewModel
                     Star = 0;
                     MinUser = GetMinSelectUser();
                     UserSubType = ZhiBoUtils.GetUserSubTypeByUserType(MinUser.UserType);
+                    SetSearchValue(response.Data.UserInfos);
                 }
 
                 RaisePropertyChanged("StarManager");
@@ -169,7 +185,11 @@ namespace TecheartSln.Plug.Drive.ViewModel
                 _Star = value;
                 MinUser = GetMinSelectUser();
                 UserSubType = ZhiBoUtils.GetUserSubTypeByUserType(MinUser.UserType);
-                
+                var response = ZhiBoUtils.GetSubUsersNew(value);
+                if (response.Code == 0)
+                {
+                    SetSearchValue(response.Data.UserInfos);
+                }
                 RaisePropertyChanged("Star");
             }
         }
@@ -225,7 +245,20 @@ namespace TecheartSln.Plug.Drive.ViewModel
             }
         }
 
-
+        /// <summary>
+        /// 输入的用户信息
+        /// </summary>
+        private String _InputSearch = String.Empty;
+        public String InputSearch
+        {
+            get { return _InputSearch; }
+            set
+            {
+                _InputSearch = value;
+                QuesionList= ConvertToObservableCollection(_AllQuesionList.Where(k => k.UserInfoUserName.Contains(value)).ToList());
+                RaisePropertyChanged("InputSearch");
+            }
+        }
         /// <summary>
         /// 输入的艺人名称
         /// </summary>
@@ -371,12 +404,12 @@ namespace TecheartSln.Plug.Drive.ViewModel
         }
         public new static string GetDesc()
         {
-            return "添加一个账号，根据您登陆的方式进行相关的添加";
+            return "添加一个账号，根据您登陆的方式进行相关的添加和查询";
         }
 
         public new static string GetName()
         {
-            return "添加账号";
+            return "用户账号管理";
         }
 
         /// <summary>
@@ -395,22 +428,25 @@ namespace TecheartSln.Plug.Drive.ViewModel
             var response = ZhiBoUtils.GetSubUsersNew(user.UserId);
             if (response.Code == 0)
             {
+                Dictionary<long, string> dic = new Dictionary<long, string>();
                 foreach (var v in response.Data.UserInfos)
                 {
-                    if (user.UserType == 0)
-                    {
-                        OperationManagerList.Add(v.UserInfoUserId, v.UserInfoUserName);
-                    }
-                    if (user.UserType == 1)
-                    {
-                        StarManagerList.Add(v.UserInfoUserId, v.UserInfoUserName);
-                    }
-                    if (user.UserType == 2)
-                    {
-                        StarList.Add(v.UserInfoUserId, v.UserInfoUserName);
-                    }
+                   dic.Add(v.UserInfoUserId, v.UserInfoUserName);
 
                 }
+                if (user.UserType == 0)
+                {
+                    OperationManagerList= dic;
+                }
+                if (user.UserType == 1)
+                {
+                    StarManagerList = dic;
+                }
+                if (user.UserType == 2)
+                {
+                    StarList = dic;
+                }
+                SetSearchValue(response.Data.UserInfos);
             }
         }
 
@@ -460,6 +496,18 @@ namespace TecheartSln.Plug.Drive.ViewModel
         {
             InputUser = new User();
             InputAnchor = new Anchor();
+        }
+
+        private ObservableCollection<T> ConvertToObservableCollection<T>(IList<T> ts)
+        {
+            ObservableCollection<T> ot = new ObservableCollection<T>(ts);
+            return ot;
+        }
+
+        private void SetSearchValue(IList<UserDetailNew> request)
+        {
+            QuesionList = ConvertToObservableCollection(request);
+            _AllQuesionList= (request);
         }
     }
 }

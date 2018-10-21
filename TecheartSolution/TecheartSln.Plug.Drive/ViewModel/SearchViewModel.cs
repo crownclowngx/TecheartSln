@@ -331,12 +331,12 @@ namespace TecheartSln.Plug.Drive.ViewModel
 
         public new static string GetDesc()
         {
-            return "基本的查询";
+            return "主播详细信息的查询，不同于用户管理，这里查询的是主播的详细信息";
         }
 
         public new static string GetName()
         {
-            return "查询客户信息";
+            return "主播详细信息查询";
         }
 
         /// <summary>
