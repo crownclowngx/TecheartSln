@@ -11,9 +11,11 @@ using TecheartSln.Core.Command;
 using TecheartSln.Core.Message.DeliverProvider;
 using TecheartSln.Core.Message.MessageTypeProvider;
 using TecheartSln.Core.Message.RelationProvider;
+using TecheartSln.Core.Resource;
 using TecheartSln.Core.Utils;
 using TecheartSln.Core.ViewModel.Base;
 using TecheartSln.Plug.Drive.Domain.Response;
+using TecheartSln.Plug.Drive.Scene;
 
 namespace TecheartSln.Plug.Drive.ViewModel
 {
@@ -40,6 +42,20 @@ namespace TecheartSln.Plug.Drive.ViewModel
             }
         }
 
+        /// <summary>
+        /// 登录名
+        /// </summary>
+        private String _NewPassword = "";
+
+        public String NewPassword
+        {
+            get { return _NewPassword; }
+            set
+            {
+                _NewPassword = value;
+                RaisePropertyChanged("NewPassword");
+            }
+        }
 
         /// <summary>
         /// 是否已经登陆
@@ -53,6 +69,21 @@ namespace TecheartSln.Plug.Drive.ViewModel
             {
                 _isUnLogin = value;
                 RaisePropertyChanged("IsUnLogin");
+            }
+        }
+
+        /// <summary>
+        /// 是否已经登陆
+        /// </summary>
+        private bool _isLogin = false;
+
+        public bool IsLogin
+        {
+            get { return _isLogin; }
+            set
+            {
+                _isLogin = value;
+                RaisePropertyChanged("IsLogin");
             }
         }
 
@@ -78,10 +109,36 @@ namespace TecheartSln.Plug.Drive.ViewModel
                             TecheartSln.Core.Resource.CommonResource.SetValue("Token", JsonUtils.Serialize(response.Data.Token));
                             MessageBox.Show("登陆成功");
                             IsUnLogin = false;
+                            IsLogin = true; 
                         }
                     }, p => true);
                 }
                 return _loginCommand;
+            }
+        }
+
+
+        RelayCommand _UpdatePasswordCommand = null;
+        public ICommand UpdatePasswordCommand
+        {
+            get
+            {
+                if (_UpdatePasswordCommand == null)
+                {
+                    _UpdatePasswordCommand = new RelayCommand((p) =>
+                    {
+                        if (String.IsNullOrEmpty(NewPassword))
+                        {
+                            MessageBox.Show("重置密码必须填写新密码");
+                            return;
+                        }
+                        var user = JsonUtils.Deserialize<User>(CommonResource.GetValue("User"));
+                        ZhiBoUtils.UpdatePassword(NewPassword, user.UserId);
+                        MessageBox.Show("密码修改已经成功");
+                        NewPassword = "";
+                    }, p => true);
+                }
+                return _UpdatePasswordCommand;
             }
         }
     }

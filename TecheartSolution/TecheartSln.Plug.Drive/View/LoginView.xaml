@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TecheartSln.Plug.Drive.View"
              mc:Ignorable="d" >
-    <Grid>
+    <StackPanel>
         <StackPanel IsEnabled="{Binding Path=IsUnLogin ,Mode=TwoWay}">
             <Label Content="登陆"/>
             <StackPanel Orientation="Horizontal" >
@@ -18,5 +18,13 @@
             </StackPanel>
             <Button Content="登陆"  Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=passwordBox}"/>
         </StackPanel>
-    </Grid>
+        <StackPanel IsEnabled="{Binding Path=IsLogin ,Mode=TwoWay}">
+            <Label Content="修改密码"/>
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="新密码"/>
+                <TextBox TextWrapping="Wrap" Text="{Binding Path=NewPassword,Mode=TwoWay}" Width="264" />
+            </StackPanel>
+            <Button Content="修改密码"  Command="{Binding UpdatePasswordCommand}" />
+        </StackPanel>
+    </StackPanel>
 </UserControl>

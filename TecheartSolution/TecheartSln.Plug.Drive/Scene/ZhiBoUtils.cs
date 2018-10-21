@@ -60,6 +60,14 @@ namespace TecheartSln.Plug.Drive.Scene
             var response = JsonUtils.Deserialize<BaseResponse<CreateAnchorResponse>>(responsestr);
             return response;
         }
+
+ 
+        public static BaseResponse<UserResponse> UpdatePassword(String password,long uderid)
+        {
+            var responsestr = HttpUtils.PostJson("http://39.107.99.199:30000/api/User/UpdatePassWord", new { PassWord= password, UserId= uderid });
+            var response = JsonUtils.Deserialize<BaseResponse<UserResponse>>(responsestr);
+            return response;
+        }
         /// <summary>
         /// 根据usertype获取他下面的字usertype
         /// </summary>
