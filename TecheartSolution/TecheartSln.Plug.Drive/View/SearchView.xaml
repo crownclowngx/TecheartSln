@@ -25,7 +25,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding UserInfoUserId}" Header="用戶id" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding UserInfoUserName}" Header="用户姓名" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
-                        <DataGridTextColumn Binding="{Binding UserInfoExtend}" Header="扩展文本" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
+                        <DataGridTextColumn Binding="{Binding UserInfoExtend}" Header="用户备注" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding UserInfoUserTypeStr}" Header="用户类型" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding AnchorInfoYYNumber}" Header="YY号" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding AnchorInfoAnchorName}" Header="昵称" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
@@ -34,7 +34,7 @@
                         <DataGridTextColumn Binding="{Binding AnchorInfoStartTime}" Header="签约开始时间" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding AnchorInfoEndTime}" Header="签约截止时间" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                         <DataGridTextColumn Binding="{Binding AnchorInfoRealName}" Header="艺人的真实姓名" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
-                        <DataGridTextColumn Binding="{Binding AnchorInfoExtend}" Header="艺人的其他扩展字段" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
+                        <DataGridTextColumn Binding="{Binding AnchorInfoExtend}" Header="主播备注" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </ScrollViewer>

@@ -263,13 +263,14 @@ namespace TecheartSln.Plug.Drive.ViewModel
                         var user=JsonUtils.Deserialize<User>(CommonResource.GetValue("User"));
                         var responsestr=HttpUtils.PostJson("http://39.107.99.199:30000/api/User/GetAnchorByFilter", new { UserIds =new List<long>() { user.UserId}, Filter=new { Enable= enable, RealName= RealName, YYNumber= YYNumber } });
                         var response=JsonUtils.Deserialize<BaseResponse<GetUsersNewResponse>>(responsestr);
-                        if (response.Code != 0)
-                        {
-                            MessageBox.Show("查询异常");
-                        }
+ 
                         //QuesionList = response.Data.UserInfos;
                         QuesionList.Clear();
-                        foreach(var v in response.Data.UserInfos)
+                        if (response.Data == null || response.Data.UserInfos == null)
+                        {
+                            return;
+                        }
+                        foreach (var v in response.Data.UserInfos)
                         {
                             QuesionList.Add(v);
                         }
@@ -312,12 +313,13 @@ namespace TecheartSln.Plug.Drive.ViewModel
                         //_StarManager _Star
                         var responsestr = HttpUtils.PostJson("http://39.107.99.199:30000/api/User/GetAnchorByFilter", new { UserIds = new List<long>() { userid }, Filter = new { Enable = false } });
                         var response = JsonUtils.Deserialize<BaseResponse<GetUsersNewResponse>>(responsestr);
-                        if (response.Code != 0)
-                        {
-                            MessageBox.Show("查询异常");
-                        }
+ 
                         //QuesionList = response.Data.UserInfos;
                         QuesionList.Clear();
+                        if (response.Data == null || response.Data.UserInfos == null)
+                        {
+                            return;
+                        }
                         foreach (var v in response.Data.UserInfos)
                         {
                             QuesionList.Add(v);

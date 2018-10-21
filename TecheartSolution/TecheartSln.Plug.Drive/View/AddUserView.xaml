@@ -30,11 +30,11 @@
                                 <TextBox HorizontalAlignment="Left" Height="23" Margin="483,12,0,0" TextWrapping="Wrap" Text="{Binding Path=InputSearch,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
                             </Grid>
                             <ScrollViewer HorizontalScrollBarVisibility="Auto" >
-                                <DataGrid ItemsSource="{Binding QuesionList}" CanUserSortColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" MaxHeight="400" VerticalAlignment="Bottom" AutoGenerateColumns="False">
+                                <DataGrid ItemsSource="{Binding QuesionList}" CanUserSortColumns="True" CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserResizeRows="False" MaxHeight="260" VerticalAlignment="Bottom" AutoGenerateColumns="False" >
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Binding="{Binding UserInfoUserId}" Header="用戶id" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" IsReadOnly="True"/>
                                         <DataGridTextColumn Binding="{Binding UserInfoUserName}" Header="用户姓名" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
-                                        <DataGridTextColumn Binding="{Binding UserInfoExtend}" Header="扩展文本" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
+                                        <DataGridTextColumn Binding="{Binding UserInfoExtend}" Header="备注" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
                                         <DataGridTextColumn Binding="{Binding UserInfoUserTypeStr}" Header="用户类型" EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" IsReadOnly="True"/>
                                     </DataGrid.Columns>
                                 </DataGrid>
@@ -47,7 +47,7 @@
                     <Label Content="密码" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="99,12,0,0" TextWrapping="Wrap" Text="{Binding Path=InputUser.UserName, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="99,40,0,0" TextWrapping="Wrap" Text="{Binding Path=InputUser.PassWord, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
-                    <Label Content="用户扩展项" HorizontalAlignment="Left" Margin="239,48,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
+                    <Label Content="用户备注" HorizontalAlignment="Left" Margin="239,48,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
                     <TextBox HorizontalAlignment="Left" Height="107" Margin="328,12,0,0" TextWrapping="Wrap" Text="{Binding Path=InputUser.Extend, Mode=TwoWay}" VerticalAlignment="Top" Width="442"  AcceptsReturn="True" VerticalScrollBarVisibility="Visible"   />
                     <Label Content="用户属于" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="99,68,0,0" TextWrapping="Wrap" Text="{Binding Path=MinUser.UserName, Mode=TwoWay}" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
@@ -63,7 +63,7 @@
                     <Label Content="真实姓名" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
                     <Label Content="签约开始时间" HorizontalAlignment="Left" Margin="240,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
                     <Label Content="签约截至时间" HorizontalAlignment="Left" Margin="240,40,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
-                    <Label Content="用户扩展项" HorizontalAlignment="Left" Margin="240,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
+                    <Label Content="主播的备注" HorizontalAlignment="Left" Margin="240,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.575,0.529" Width="84"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="99,12,0,0" TextWrapping="Wrap" Text="{Binding Path=InputAnchor.YYNumber}" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="99,40,0,0" TextWrapping="Wrap" Text="{Binding Path=InputAnchor.AnchorName}" VerticalAlignment="Top" Width="120"/>
                     <TextBox HorizontalAlignment="Left" Height="23" Margin="99,132,0,0" TextWrapping="Wrap" Text="{Binding Path=InputAnchor.AnchorProportion}" VerticalAlignment="Top" Width="120"/>

@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TecheartSln.Main"
         mc:Ignorable="d"
-        Title="CC的小平台" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="BN管理平台" Height="600" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
